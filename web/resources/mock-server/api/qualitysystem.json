@@ -1,0 +1,1243 @@
+{
+    "qualitysystem": [{
+            "url": "/QualityService/common/checkLoginUserIsProjectManager",
+            "desc": "查询是否为项目经理",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": {
+                    "isProjectManager": true
+                }
+            }
+        },
+        {
+            "url": "/QualityService/kpi/queryKpiStatusRate",
+            "desc": "KPI指标达标比例查询",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "requirement_response": [{
+                        "name": "达标项目",
+                        "value": 40
+                    },
+                    {
+                        "name": "未达标项目",
+                        "value": 60
+                    }
+                ],
+                "requirement_finished": [{
+                        "name": "达标项目",
+                        "value": 80
+                    },
+                    {
+                        "name": "未达标项目",
+                        "value": 20
+                    }
+                ],
+                "video_requirement_finished": [{
+                        "name": "达标项目",
+                        "value": 100
+                    },
+                    {
+                        "name": "未达标项目",
+                        "value": 0
+                    }
+                ],
+                "year": "2016",
+                "quarter": "Q1"
+            }
+        },
+        {
+            "url": "/QualityService/kpi/queryMyProjectsRates",
+            "desc": "获取当前用户（项目经理）负责项目的KPI指标（需求响应及时率、需求平均完成率和大视频定制化需求完成率）",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result|5": [{
+                    "project_name": "咪咕系统测试系统-接口测试系统——性能测试系统",
+                    "project_id": 7,
+                    "requirement_finished_rate": 30,
+                    "requirement_finished_status": "qualified",
+                    "requirement_response_rate": 0,
+                    "requirement_response_status": "qualified",
+                    "video_requirement_finished_rate": "",
+                    "video_requirement_finished_status": "unqualified",
+                    "year": 2018,
+                    "quarter": "Q3"
+                }],
+                "basePage": {
+                    "pageNo": 5,
+                    "pageSize": 7,
+                    "counts": 300,
+                    "pages": 10
+                }
+            }
+        },
+        {
+            "url": "/QualityService/kpi/queryRequirementResponseSourceData",
+            "desc": "获取需求响应及时率原始数据",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result|15": [{
+                    "requirement_num": "1234567",
+                    "requirement_title": "jiang的需求标题",
+                    "approve_begin_time": "2018-01",
+                    "approve_end_time": "2018-07",
+                    "during_time": "27",
+                    "status": "qualified",
+                    "approver": "姜姜"
+                }],
+                "basePage": {
+                    "pageNo": 7,
+                    "pageSize": 10,
+                    "counts": 270,
+                    "pages": 90
+                }
+            }
+        },
+        {
+            "url": "/QualityService/kpi/queryRequirementFinishedSourceData",
+            "desc": "获取需求平均完成率原始数据",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result|6": [{
+                    "requirement_num": "1234567",
+                    "requirement_title": "jiang的需求标题",
+                    "approve_end_time": "2018-01",
+                    "online_time": "2018-07",
+                    "status": "unqualified",
+                    "manager": "晴天"
+                }],
+                "basePage": {
+                    "pageNo": 7,
+                    "pageSize": 10,
+                    "counts": 170,
+                    "pages": 90
+                }
+            }
+        },
+        {
+            "url": "/QualityService/common/queryProjectsByBigProjectId",
+            "desc": "查询大项目下的项目",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": [{
+                        "project_id": 27,
+                        "project_name": "姜姜"
+                    },
+                    {
+                        "project_id": 2,
+                        "project_name": "一级"
+                    },
+                    {
+                        "project_id": 7,
+                        "project_name": "系统"
+                    },
+                    {
+                        "project_id": 2790,
+                        "project_name": "平台"
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/QualityService/kpi/queryVideoRequirementFinishedSourceData",
+            "desc": "获取大视频定制化需求完成率原始数据",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result|8": [{
+                    "requirement_num": "7654321",
+                    "requirement_title": "需求标题",
+                    "approve_end_time": "2018-01",
+                    "online_time": "2018-07",
+                    "status": "qualified",
+                    "manager": "jiangjiang"
+                }],
+                "basePage": {
+                    "pageNo": 7,
+                    "pageSize": 10,
+                    "counts": 90,
+                    "pages": 90
+                }
+            }
+        },
+        {
+            "url": "/QualityService/common/queryCurrentDate",
+            "desc": "查询当前日期、年和季度",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": {
+                    "date": "2018-10",
+                    "quarter": "Q4"
+                }
+            }
+        },
+        {
+            "url": "/QualityService/common/queryProjectsByTag",
+            "desc": "根据项目标签查询项目信息列表",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": [{
+                        "project_id": 1,
+                        "project_name": "项目组间排名1"
+                    },
+                    {
+                        "project_id": 2,
+                        "project_name": "项目组间排名2"
+                    },
+                    {
+                        "project_id": 3,
+                        "project_name": "项目组间排名3"
+                    },
+                    {
+                        "project_id": 4,
+                        "project_name": "项目组间排名4"
+                    },
+                    {
+                        "project_id": 5,
+                        "project_name": "项目组间排名5"
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/QualityService/common/queryProjects",
+            "desc": "查询项目",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": [{
+                        "project_id": 27,
+                        "project_name": "姜姜的一级项目"
+                    },
+                    {
+                        "project_id": 2,
+                        "project_name": "spms"
+                    },
+                    {
+                        "project_id": 7,
+                        "project_name": "质量系统"
+                    },
+                    {
+                        "project_id": 2790,
+                        "project_name": "测试平台"
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/QualityService/common/queryBigProjectsByManager",
+            "desc": "查询与项目经理相关的大项目列表",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": [{
+                        "big_project_id": 1,
+                        "big_project_name": "大项目名称1",
+                        "big_project_code": "01"
+                    },
+                    {
+                        "big_project_id": 2,
+                        "big_project_name": "大项目名称2",
+                        "big_project_code": "02"
+                    },
+                    {
+                        "big_project_id": 3,
+                        "big_project_name": "大项目名称3",
+                        "big_project_code": "03"
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/QualityService/common/queryBigProjects",
+            "desc": "查询大项目项目列表",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": [{
+                        "big_project_id": 1,
+                        "big_project_name": "第一个大项目"
+                    },
+                    {
+                        "big_project_id": 2,
+                        "big_project_name": "姜1的大项目"
+                    },
+                    {
+                        "big_project_id": 7,
+                        "big_project_name": "77的大项目"
+                    },
+                    {
+                        "big_project_id": 90,
+                        "big_project_name": "测试平台大项目"
+                    }
+                ]
+            }
+        },
+
+        {
+            "url": "/QualityService/defect/queryDefectWorkOrderSourceData",
+            "desc": "问题工单原始数据",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result|8": [{
+                    "defect_num": "02154",
+                    "defect_title": "此处有缺陷",
+                    "create_time": 20180811,
+                    "solve_time": 5,
+                    "manager": "孙燕"
+                }],
+                "basePage": {
+                    "pageNo": 8,
+                    "pageSize": 10,
+                    "counts": 400,
+                    "pages": 10
+                }
+            }
+        },
+        {
+            "url": "/QualityService/defect/queryDefectWorkOrder",
+            "desc": "1.查询所有项目的问题工单情况；2.查询当前登录用户负责项目的问题工单情况",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result|7": [{
+                    "project_name": "质量系统",
+                    "project_id": "7",
+                    "rank": 30,
+                    "defect_count": 270,
+                    "avg_solve_time": 70,
+                    "manager": "姜姜",
+                    "date": "2018-07"
+                }],
+                "basePage": {
+                    "pageNo": 15,
+                    "pageSize": 7,
+                    "counts": 100,
+                    "pages": 10
+                }
+            }
+        },
+        {
+            "url": "/QualityService/kpi/queryRequirementResponseReachStandard",
+            "desc": "查询达标情况需求响应及时率",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result|5": [{
+                    "kpi": "requirement_response_rate",
+                    "year": 2018,
+                    "quarter": "Q2",
+                    "project_name": "需求响应及时率项目名称",
+                    "requirement_count": 10,
+                    "responsed_count": 2,
+                    "rate": 50,
+                    "standard_rate": 10,
+                    "status": "达标",
+                    "manager_name": "就是你"
+                }],
+                "basePage": {
+                    "pageNo": 8,
+                    "pageSize": 10,
+                    "counts": 400,
+                    "pages": 10
+                }
+            }
+        },
+        {
+            "url": "/QualityService/kpi/queryRequirementFinishedReachStandard",
+            "desc": "查询达标情况需求平均完成率",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result|8": [{
+                    "kpi": "requirement_finished_rate",
+                    "year": 2018,
+                    "quarter": "Q2",
+                    "project_name": "需求平均完成率项目名称",
+                    "requirement_count": 0,
+                    "online_count": 0,
+                    "rate": 20,
+                    "standard_rate": "",
+                    "status": "达标",
+                    "manager_name": "崔书霞"
+                }],
+                "basePage": {
+                    "pageNo": 2,
+                    "pageSize": 10,
+                    "counts": 200,
+                    "pages": 10
+                }
+            }
+        },
+        {
+            "url": "/QualityService/kpi/queryVideoRequirementFinishedReachStandard",
+            "desc": "查询达标情况大视频定制化需求完成率",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": [{
+                    "kpi": "video_requirement_finished_rate",
+                    "year": 2018,
+                    "quarter": "Q2",
+                    "project_name": "大视频定制化需求完成率项目名称",
+                    "requirement_count": "",
+                    "online_count": "",
+                    "rate": "70",
+                    "status": "达标",
+                    "standard_rate": "89",
+                    "manager_name": "写谁呢"
+                }],
+                "basePage": {
+                    "pageNo": 2,
+                    "pageSize": 10,
+                    "counts": 500,
+                    "pages": 50
+                }
+            }
+        },
+        {
+            "url": "/QualityService/common/queryManagers",
+            "desc": "在管理员列表中查询符合检索条件的用户",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": [{
+                        "user_id": 1,
+                        "user_name": "jiang1"
+                    },
+                    {
+                        "user_id": 2,
+                        "user_name": "姜2"
+                    },
+                    {
+                        "user_id": 3,
+                        "user_name": "姜山"
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/QualityService/qualityMeasure/queryOverallScoreRank",
+            "desc": "1.查询所有大项目质量度量整体得分排名；2.查询当前登录用户相关的大项目质量度量整体得分排名",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": [{
+                        "rank": -1,
+                        "big_project_id": 1,
+                        "big_project_name": "第一个大项目",
+                        "overall_score": -1
+                    },
+                    {
+                        "rank": 1,
+                        "big_project_id": 2,
+                        "big_project_name": "姜1的大项目",
+                        "overall_score": 0
+                    },
+                    {
+                        "rank": 2,
+                        "big_project_id": 90,
+                        "big_project_name": "测试平台大项目",
+                        "overall_score": 34
+                    }
+                ],
+                "basePage": {
+                    "pageNo": 4,
+                    "pageSize": 10,
+                    "counts": 500,
+                    "pages": 50
+                }
+            }
+        },
+        {
+            "url": "/QualityService/qualityMeasure/queryOverallScore",
+            "desc": "查询指定大项目下所有一级项目指定季度内的质量度量整体得分",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": {
+                    "quarter_score": "",
+                    "data|2": [
+                        [{
+                                "project_id": 2,
+                                "project_name": "spms",
+                                "month": "2017-07",
+                                "month_score": 100,
+                                "develop_score": 80,
+                                "test_score": 10,
+                                "operation_score": 10
+                            },
+                            {
+                                "project_id": 2,
+                                "project_name": "spms",
+                                "month": "2017-08",
+                                "month_score": 100,
+                                "develop_score": 80,
+                                "test_score": 10,
+                                "operation_score": 10
+                            },
+                            {
+                                "project_id": 2,
+                                "project_name": "spms",
+                                "month": "2017-09",
+                                "month_score": 100,
+                                "develop_score": 80,
+                                "test_score": 10,
+                                "operation_score": 10
+                            },
+                            {
+                                "project_id": 2,
+                                "project_name": "季度总分-spms",
+                                "month": null,
+                                "month_score": 100,
+                                "develop_score": 80,
+                                "test_score": 10,
+                                "operation_score": 10
+                            }
+                        ],
+                        [{
+                                "project_id": 27,
+                                "project_name": "姜姜的一级项目",
+                                "month": "2017-07",
+                                "month_score": 100,
+                                "develop_score": 80,
+                                "test_score": 10,
+                                "operation_score": 10
+                            },
+                            {
+                                "project_id": 27,
+                                "project_name": "姜姜的一级项目",
+                                "month": "2017-08",
+                                "month_score": 100,
+                                "develop_score": 80,
+                                "test_score": 10,
+                                "operation_score": 10
+                            },
+                            {
+                                "project_id": 27,
+                                "project_name": "姜姜的一级项目",
+                                "month": "2017-09",
+                                "month_score": 100,
+                                "develop_score": 80,
+                                "test_score": 10,
+                                "operation_score": 10
+                            },
+                            {
+                                "project_id": 27,
+                                "project_name": "季度总分-姜姜的一级项目",
+                                "month": null,
+                                "month_score": 100,
+                                "develop_score": 80,
+                                "test_score": 10,
+                                "operation_score": 10
+                            }
+                        ]
+                    ]
+                }
+            }
+        },
+        {
+            "url": "/QualityService/qualityMeasure/queryDevScore4QualityMeasure",
+            "desc": "查询指定项目指定时间范围内的开发质量度量情况",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": {
+                    "dev_total_score": "",
+                    "data": [{
+                            "project_id": 1,
+                            "version_num": "",
+                            "date": " 2018-03",
+                            "version_state_name": "未开始",
+                            "version_score": null,
+                            "defect_density_score": 1212,
+                            "static_check_score": 56,
+                            "test_failure_count": 344,
+                            "test_failure_score": 12,
+                            "ut_passing_rate": "20.4534",
+                            "ut_cover_rate": "30.54849",
+                            "ut_score": 50,
+                            "static_defect_count|1-100.1-10": 1,
+                            "static_check_problem_density": 0.5,
+                            "static_defect_count": 8,
+                            "version_total_code_count": 16000,
+                            "static_check_increased_problem_denstiy": "0.5",
+                            "version_increased_defect_count": 8,
+                            "version_increased_code_count": 16000
+                        },
+                        {
+                            "project_id": 1,
+                            "version_num": "v1.0.2",
+                            "date": " 2018-03",
+                            "version_state_name": "未开始",
+                            "version_score": null,
+                            "defect_density_score": 0,
+                            "static_check_score": 0,
+                            "test_failure_count": 0,
+                            "test_failure_score": 0,
+                            "ut_passing_rate": 0,
+                            "ut_cover_rate": 0,
+                            "ut_score": 0,
+                            "static_check_problem_density": 0,
+                            "static_defect_count": 0,
+                            "version_total_code_count": 16000,
+                            "static_check_increased_problem_denstiy": 0,
+                            "version_increased_defect_count": 0,
+                            "version_increased_code_count": 16000
+                        },
+                        {
+                            "project_id": 1,
+                            "version_num": "v1.0.2",
+                            "date": " 2018-03",
+                            "version_state_name": "未开始",
+                            "version_score": null,
+                            "defect_density_score": "",
+                            "static_check_score": "",
+                            "test_failure_count": "",
+                            "test_failure_score": "",
+                            "ut_passing_rate": "",
+                            "ut_cover_rate": "",
+                            "ut_score": "",
+                            "static_check_problem_density": "",
+                            "static_defect_count": 0,
+                            "version_total_code_count": 16000,
+                            "static_check_increased_problem_denstiy": "",
+                            "version_increased_defect_count": 0,
+                            "version_increased_code_count": 16000
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "url": "/QualityService/qualityMeasure/queryTestScore4QualityMeasure",
+            "desc": "查询指定项目下指定时间范围内的维度测试情况",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": {
+                    "test_total_score": 0,
+                    "data|2": [{
+                            "project_id": 1,
+                            "version_num": "v1.0.1",
+                            "date": " 2018-02",
+                            "version_state_name": "待测试",
+                            "version_score": 56.85,
+                            "defect_density_score": 89.56,
+                            "release_leave_defect_count": 234,
+                            "release_leave_defect_score": 71.05,
+                            "ressing_test_not_passed_count": 56,
+                            "ressing_test_not_passed_score": 100,
+                            "defect_density": 0.5,
+                            "version_defect_total_count": 8,
+                            "version_code_total_count": 16000
+                        },
+                        {
+                            "project_id": 1,
+                            "version_num": "v1.0.1",
+                            "date": " 2018-02",
+                            "version_state_name": "待测试",
+                            "version_score": 0,
+                            "defect_density_score": 0,
+                            "release_leave_defect_count": 0,
+                            "release_leave_defect_score": 0,
+                            "ressing_test_not_passed_count": 0,
+                            "ressing_test_not_passed_score": 0,
+                            "defect_density": 0,
+                            "version_defect_total_count": 0,
+                            "version_code_total_count": 0
+                        },
+                        {
+                            "project_id": 1,
+                            "version_num": "v1.0.1",
+                            "date": " 2018-02",
+                            "version_state_name": "待测试",
+                            "version_score": "",
+                            "defect_density_score": "",
+                            "release_leave_defect_count": "",
+                            "release_leave_defect_score": "",
+                            "ressing_test_not_passed_count": "",
+                            "ressing_test_not_passed_score": "",
+                            "defect_density": "",
+                            "version_defect_total_count": "",
+                            "version_code_total_count": ""
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "url": "/QualityService/qualityMeasure/queryOperationQualityMeasurement",
+            "desc": "查询指定项目下指定时间范围内的维度运维情况",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": {
+                    "score": 10,
+                    "data": [{
+                            "project_id": 2,
+                            "project_name": "姜姜的一级项目",
+                            "date": " 2018-02",
+                            "month_score": 100,
+                            "deploy_failed_count": 23,
+                            "deploy_score": 89.56,
+                            "business_alarm_score": 75.45,
+                            "trouble_score": 93.45,
+                            "trouble_solved_rate": 12.448,
+                            "trouble_solved_score": 78.23,
+                            "trouble_avg_solved_time": 143,
+                            "trouble_avg_solved_time_score": 52.89,
+                            "business_alarm_rate": 67,
+                            "business_alarm_count": 2,
+                            "business_monitor_count": 3,
+                            "trouble_count": 3,
+                            "monitor_count": 6,
+                            "trouble_rate": 50.124142342
+                        },
+                        {
+                            "project_id": 2,
+                            "project_name": "姜姜的一级项目",
+                            "date": " 2018-02",
+                            "month_score": 0,
+                            "deploy_failed_count": 0,
+                            "deploy_score": 0,
+                            "business_alarm_score": 0,
+                            "trouble_score": 0,
+                            "trouble_solved_rate": 0,
+                            "trouble_solved_score": 0,
+                            "trouble_avg_solved_time": 0,
+                            "trouble_avg_solved_time_score": 0,
+                            "business_alarm_rate": 0,
+                            "business_alarm_count": 0,
+                            "business_monitor_count": 6,
+                            "trouble_count": 3,
+                            "monitor_count": 0,
+                            "trouble_rate": 0
+                        },
+                        {
+                            "project_id": 2,
+                            "project_name": "姜姜的一级项目",
+                            "date": " 2018-02",
+                            "month_score": "",
+                            "deploy_failed_count": "",
+                            "deploy_score": "",
+                            "business_alarm_score": "",
+                            "trouble_score": "",
+                            "trouble_solved_rate": "",
+                            "trouble_solved_score": "",
+                            "trouble_avg_solved_time": "",
+                            "trouble_avg_solved_time_score": "",
+                            "business_alarm_rate": "",
+                            "business_alarm_count": 0,
+                            "business_monitor_count": "",
+                            "trouble_count": "",
+                            "monitor_count": "",
+                            "trouble_rate": ""
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "url": "/QualityService/common/queryVersionListUnderOneLevelProject",
+            "desc": "查询一级项目下的版本信息列表",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": [{
+                        "version_num": "v1.0",
+                        "version_id": 1,
+                        "parent_version_id": null
+                    },
+                    {
+                        "version_num": "v1.1",
+                        "version_id": 2,
+                        "parent_version_id": 1
+                    },
+                    {
+                        "version_num": "v1.2",
+                        "version_id": 3,
+                        "parent_version_id": 2
+                    },
+                    {
+                        "version_num": "v2.0",
+                        "version_id": 4,
+                        "parent_version_id": null
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/QualityService/productRate/queryProductionRateManageProjects",
+            "desc": "生产率管理 - 数据页的项目列表",
+            "mock": false,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": [{
+                        "project_id": 2,
+                        "project_name": "生产率项目1",
+                        "quality_role_type": 3
+                    },
+                    {
+                        "project_id": 43,
+                        "project_name": "生产率项目2",
+                        "quality_role_type": 3
+                    },
+                    {
+                        "project_id": 13,
+                        "project_name": "生产率项目3",
+                        "quality_role_type": 3
+                    },
+                    {
+                        "project_id": 31,
+                        "project_name": "生产率项目4",
+                        "quality_role_type": 3
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/QualityService/productRate/queryProjectStatisticItems",
+            "desc": "查询生产率录入页指标数据",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": [{
+                        "project_id": 1,
+                        "project_name": "项目名称",
+                        "item_id": 23,
+                        "item_name": "接口调用量",
+                        "item_statistic_type_alias": "手动填写",
+                        "item_statistic_type": "01",
+                        "item_source_type_alias": "持续化集成",
+                        "item_data": 12
+                    },
+                    {
+                        "project_id": 1,
+                        "project_name": "项目名称",
+                        "item_id": 454,
+                        "item_name": "月度活跃用户数",
+                        "item_statistic_type_alias": "自动获取",
+                        "item_statistic_type": "02",
+                        "item_source_type_alias": "持续化集成",
+                        "item_data": 1223
+                    },
+                    {
+                        "project_id": 1,
+                        "project_name": "项目名称",
+                        "item_id": 87,
+                        "item_name": "创建测试用例数",
+                        "item_statistic_type_alias": "手动填写",
+                        "item_statistic_type": "01",
+                        "item_source_type_alias": "持续化集成",
+                        "item_data": 56
+                    },
+                    {
+                        "project_id": 1,
+                        "project_name": "项目名称",
+                        "item_id": 23,
+                        "item_name": "执行测试用例数",
+                        "item_statistic_type_alias": "手动填写",
+                        "item_statistic_type": "01",
+                        "item_source_type_alias": "持续化集成",
+                        "item_data": 12
+                    },
+                    {
+                        "project_id": 1,
+                        "project_name": "项目名称",
+                        "item_id": 454,
+                        "item_name": "提交缺陷数",
+                        "item_statistic_type_alias": "自动获取",
+                        "item_statistic_type": "02",
+                        "item_source_type_alias": "持续化集成",
+                        "item_data": 1223
+                    },
+                    {
+                        "project_id": 1,
+                        "project_name": "项目名称",
+                        "item_id": 87,
+                        "item_name": "新增修改代码量",
+                        "item_statistic_type_alias": "手动填写",
+                        "item_statistic_type": "01",
+                        "item_source_type": "02",
+                        "item_source_type_alias": "持续化集成",
+                        "item_data": 56
+                    },
+                    {
+                        "project_id": 1,
+                        "project_name": "项目名称",
+                        "item_id": 23,
+                        "item_name": "需求工单数",
+                        "item_statistic_type_alias": "手动填写",
+                        "item_statistic_type": "01",
+                        "item_source_type": "02",
+                        "item_source_type_alias": "持续化集成",
+                        "item_data": 12
+                    },
+                    {
+                        "project_id": 1,
+                        "project_name": "项目名称",
+                        "item_id": 454,
+                        "item_name": "服务器数量",
+                        "item_statistic_type_alias": "自动获取",
+                        "item_statistic_type": "02",
+                        "item_source_type": "02",
+                        "item_source_type_alias": "持续化集成",
+                        "item_data": 1223
+                    },
+                    {
+                        "project_id": 1,
+                        "project_name": "项目名称",
+                        "item_id": 87,
+                        "item_name": "上线版本数",
+                        "item_statistic_type_alias": "手动填写",
+                        "item_statistic_type": "01",
+                        "item_source_type": "02",
+                        "item_source_type_alias": "持续化集成",
+                        "item_data": 56
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/QualityService/productRate/queryProjectStaffInfo",
+            "desc": "查询生产率录入页人力数据",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": [{
+                        "project_id": 2,
+                        "project_name": "人力项目名称",
+                        "type_id": 3,
+                        "type_name": "人力角色名称",
+                        "statistic_type_alias": "手动填写",
+                        "statistic_type": "01",
+                        "staff_inner_count": 0,
+                        "staff_foreign_count": 0
+                    },
+                    {
+                        "project_id": 233,
+                        "project_name": "人力项目名称",
+                        "type_id": 3,
+                        "type_name": "人力角色名称",
+                        "statistic_type_alias": "手动填写",
+                        "statistic_type": "01",
+                        "staff_inner_count": 1231,
+                        "staff_foreign_count": 458
+                    },
+                    {
+                        "project_id": 678,
+                        "project_name": "人力项目名称",
+                        "type_id": 3,
+                        "type_name": "人力角色名称",
+                        "statistic_type_alias": "自动获取",
+                        "statistic_type": "02",
+                        "staff_inner_count": 12.65,
+                        "staff_foreign_count": 67.89
+                    },
+                    {
+                        "project_id": 45,
+                        "project_name": "人力项目名称",
+                        "type_id": 3,
+                        "type_name": "人力角色名称",
+                        "statistic_type_alias": "自动获取",
+                        "statistic_type": "02",
+                        "staff_inner_count": 656.89,
+                        "staff_foreign_count": 7878.9
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/QualityService/productRate/queryEnterPanelInfo",
+            "desc": "生产率度量中生产率管理页展示统计面板信息",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": {
+                    "statistic_finish_status": true,
+                    "has_mail_failed": "00",
+                    "start_month": "2018-08",
+                    "end_month": "2018-09",
+                    "data|5": [{
+                        "project_id": 1,
+                        "project_name": "项目1",
+                        "input_status": "01",
+                        "input_status_alias": "待录入",
+                        "mail_acceptor_names": "姜继琦,姜1,姜姜姜",
+                        "is_statistic": "01",
+                        "is_statistic_alias": "是",
+                        "is_send_mail_success": 1,
+                        "is_send_mail_success_alias": "成功",
+                        "applied_range_alias": "对内",
+                        "develop_mode_alias": "自研",
+                        "entrust_party": "华为",
+                        "start_month": "2018-08",
+                        "end_month": "2018-09"
+                    }]
+                },
+                "basePage": {
+                    "pageNo": 1,
+                    "pageSize": 10,
+                    "counts": 3,
+                    "pages": 50
+                }
+            }
+        },
+        {
+            "url": "/QualityService/productRate/queryProjectStatisticStatus",
+            "desc": "按月份查询项目统计状态:生产率度量中生产率管理数据页中展示项目指标统计状态",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": [{
+                        "project_id": 1,
+                        "statistic_month": "2018-07",
+                        "project_name": "项目1",
+                        "statistic_status": "01",
+                        "statistic_status_alias": "未完成"
+                    },
+                    {
+                        "project_id": 2,
+                        "statistic_month": "2018-07",
+                        "project_name": "项目2",
+                        "statistic_status": "02",
+                        "statistic_status_alias": "已完成"
+                    },
+                    {
+                        "project_id": 3,
+                        "statistic_month": "2018-07",
+                        "project_name": "项目27",
+                        "statistic_status": "00",
+                        "statistic_status_alias": "未统计"
+                    }
+                ],
+                "basePage": {
+                    "pageNo": 1,
+                    "pageSize": 10,
+                    "counts": 3,
+                    "pages": 50
+                }
+            }
+        },
+        {
+            "url": "/QualityService/productRate/startStatistics",
+            "desc": "启动生产率度量指标统计",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功"
+            }
+        },
+        {
+            "url": "/QualityService/productRate/closeStatistics",
+            "desc": "结束生产率度量指标统计",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功"
+            }
+        },
+        {
+            "url": "/QualityService/productRate/queryStatisticCompleteStatus",
+            "desc": "查询生产率度量统计完成状态",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": {
+                    "statistic_finish_status": false
+                }
+            }
+        },
+        {
+            "url": "/QualityService/productRate/inputProjectStatisticItems",
+            "desc": "录入项目生产率度量指标数据",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功"
+            }
+        },
+        {
+            "url": "/QualityService/productRate/inputProjectStaffInfo",
+            "desc": "录入项目生产率度量人力数据",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功"
+            }
+        },
+        {
+            "url": "/QualityService/productRate/queryCurrUserPrivilege",
+            "desc": "生产率度量中根据用户id获取用户角色权限",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": ["3"]
+            }
+        },
+        {
+            "url": "/QualityService/productRate/updateStatisticStatus",
+            "desc": "修改项目纳入生产率度量统计状态",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功"
+            }
+        },
+        {
+            "url": "/QualityService/productRate/queryStatisticsDate",
+            "desc": "查询当前生产率数据统计时间区间",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": ["2018-01", "2018-03"]
+            }
+        },
+        {
+            "url": "/QualityService/productRate/queryEnterPanelDate",
+            "desc": "查询生产率管理页时间",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": {
+                    "start_month": "2018-01",
+                    "end_month": "2018-03"
+                }
+            }
+        },
+        {
+            "url": "/QualityService/productRate/queryProductionRateInputProjects",
+            "desc": "生产率度量管理数据页中根据用户权限获取项目列表",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": [{
+                        "quality_role_type": 1,
+                        "project_id": 234,
+                        "project_name": "录入页项目1"
+                    },
+                    {
+                        "quality_role_type": 2,
+                        "project_id": 123,
+                        "project_name": "录入页项目2"
+                    },
+                    {
+                        "quality_role_type": 3,
+                        "project_id": 45,
+                        "project_name": "录入页项目3"
+                    },
+                    {
+                        "quality_role_type": 4,
+                        "project_id": 12,
+                        "project_name": "录入页项目4"
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/QualityService/productRate/queryItemType",
+            "desc": "当无可录入月份和项目时，调用此接口来查询生产率度量中生产率管理录入页中展示指标类型",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": [{
+                    "item_id": 87,
+                    "item_name": "木有参数的指标页",
+                    "item_statistic_type_alias": "手动填写",
+                    "item_statistic_type": "01",
+                    "item_source_type": "02",
+                    "item_source_type_alias": "持续化集成"
+                }]
+            }
+        },
+        {
+            "url": "/QualityService/productRate/queryStaffType",
+            "desc": "当无可录入月份和项目时，调用此接口来查询生产率度量中生产率管理录入页中展示人力类型",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": [{
+                    "type_id": 3,
+                    "type_name": "木有参数的人力页",
+                    "statistic_type_alias": "手动填写",
+                    "statistic_type": "01"
+                }]
+            }
+        },
+        {
+            "url": "/QualityService/common/queryTagEntrustPartyDevelopMode",
+            "desc": "查询项目标签列表-包括委托方和软件开发形式",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": [{
+                        "tag_code": "11",
+                        "tag_name": "自研"
+                    },
+                    {
+                        "tag_code": "22",
+                        "tag_name": "委托"
+                    },
+                    {
+                        "tag_code": "33",
+                        "tag_name": "人力支撑"
+                    },
+                    {
+                        "tag_code": "44",
+                        "tag_name": "自研+人力支撑"
+                    },
+                    {
+                        "tag_code": "55",
+                        "tag_name": "苏研"
+                    }
+                ]
+            }
+        }
+    ]
+}

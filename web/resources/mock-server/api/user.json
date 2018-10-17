@@ -1,0 +1,2997 @@
+{
+    "user": [
+        {
+            "url": "/UserService/userproject/verifyUserIsProjectManager",
+            "desc": "验证当前登陆人员是否为项目某项目的项目经理",
+            "mock": "true",
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": true
+            }
+        },
+        {
+            "url": "/UserService/user/checkAuthCode",
+            "desc": "忘记密码校验验证码",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": {
+                    "sessionId": "session78371b2ad8e10c385366757105",
+                    "userId": 4657,
+                    "userName": "二花",
+                    "userMail": "gefangyu@migu.cn",
+                    "userTel": "17828033993",
+                    "userCompany": "咪咕文化科技有限公司",
+                    "userDepartment": "咪咕文化研发事业部(成都)",
+                    "userDepartmentId": 1157,
+                    "userRoleId": 2,
+                    "userRole": "项目经理",
+                    "firstLogin": false,
+                    "userCompanyId": 1,
+                    "userPy": "erhuawx",
+                    "belongLocation": "C",
+                    "departmentFlag": 1,
+                    "companyFlag": 1,
+                    "virtualGroupId": 10001,
+                    "virtualGroupName": "TSG",
+                    "isAdmin": false,
+                    "userNickName": "神经病"
+                }
+            }
+        },
+        {
+            "url": "/UserService/project/queryOfficialProjects",
+            "desc": "查询一级项目",
+            "mock": "true",
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result|8": [
+                    {
+                        "pid|+1": 1,
+                        "name": "@cword(1,10)"
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/UserService/view/queryAll",
+            "desc": "查询视图列表",
+            "mock": "true",
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result|15": [
+                    {
+                        "config_id|+1": 1,
+                        "view_id|+1": 1,
+                        "view_title": "@cword(1,50)",
+                        "service_id": "@cword(1,50)",
+                        "project_id": 1,
+                        "view_type|1": ["02"],
+                        "view_condition_relation|1": ["01", "02"],
+                        "create_user_id": "@integer(20,40)",
+                        "create_user_name": "@cword(2,3)",
+                        "create_time": "@DATETIME('yyyy-MM-dd HH:mm:ss)",
+                        "view_config": {
+                            "is_default|1": [true, false],
+                            "enable|1": [true, false],
+                            "delete_permit|1": [true, false],
+                            "edit_permit|1": [true],
+                            "view_order|+1": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/UserService/view/queryViewConfigField",
+            "desc": "查询视图条件动作字段",
+            "mock": "true",
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": [
+                    {
+                        "field_id": 1,
+                        "service_id": 30,
+                        "field_service": "function",
+                        "field_name": "func_require_num",
+                        "field_remark": "编号",
+                        "field_category": "04",
+                        "field_type": "字段类型",
+                        "field_limit": 20,
+                        "condition_action_list": [
+                            {
+                                "action_code": "01",
+                                "action_remark": "包含"
+                            },
+                            {
+                                "action_code": "02",
+                                "action_remark": "不包含"
+                            },
+                            {
+                                "action_code": "03",
+                                "action_remark": "为空"
+                            },
+                            {
+                                "action_code": "04",
+                                "action_remark": "不为空"
+                            }
+                        ]
+                    },
+                    {
+                        "field_id": 2,
+                        "service_id": 30,
+                        "field_service": "function",
+                        "field_name": "require_title",
+                        "field_remark": "标题",
+                        "field_category": "01",
+                        "field_type": "字段类型",
+                        "field_limit": 20,
+                        "condition_action_list": [
+                            {
+                                "action_code": "01",
+                                "action_remark": "包含"
+                            },
+                            {
+                                "action_code": "02",
+                                "action_remark": "不包含"
+                            },
+                            {
+                                "action_code": "03",
+                                "action_remark": "为空"
+                            },
+                            {
+                                "action_code": "04",
+                                "action_remark": "不为空"
+                            }
+                        ]
+                    },
+                    {
+                        "field_id": 3,
+                        "service_id": 30,
+                        "field_service": "function",
+                        "field_name": "require_status_name",
+                        "field_remark": "状态",
+                        "field_category": "03",
+                        "field_type": "字段类型",
+                        "field_limit": null,
+                        "condition_action_list": [
+                            {
+                                "action_code": "05",
+                                "action_remark": "属于"
+                            },
+                            {
+                                "action_code": "06",
+                                "action_remark": "不属于"
+                            },
+                            {
+                                "action_code": "03",
+                                "action_remark": "为空"
+                            },
+                            {
+                                "action_code": "04",
+                                "action_remark": "不为空"
+                            }
+                        ]
+                    },
+                    {
+                        "field_id": 4,
+                        "service_id": 30,
+                        "field_service": "function",
+                        "field_name": "updator_name",
+                        "field_remark": "当前处理人",
+                        "field_category": "02",
+                        "field_type": "字段类型",
+                        "field_limit": null,
+                        "condition_action_list": [
+                            {
+                                "action_code": "05",
+                                "action_remark": "属于"
+                            },
+                            {
+                                "action_code": "06",
+                                "action_remark": "不属于"
+                            },
+                            {
+                                "action_code": "07",
+                                "action_remark": "是"
+                            },
+                            {
+                                "action_code": "08",
+                                "action_remark": "不是"
+                            },
+                            {
+                                "action_code": "03",
+                                "action_remark": "为空"
+                            },
+                            {
+                                "action_code": "04",
+                                "action_remark": "不为空"
+                            },
+                            {
+                                "action_code": "09",
+                                "action_remark": "是当前登录用户"
+                            }
+                        ]
+                    },
+                    {
+                        "field_id": 5,
+                        "service_id": 30,
+                        "field_service": "function",
+                        "field_name": "create_time",
+                        "field_remark": "创建时间",
+                        "field_category": "05",
+                        "field_type": "字段类型",
+                        "field_limit": null,
+                        "condition_action_list": [
+                            {
+                                "action_code": "10",
+                                "action_remark": "之间"
+                            },
+                            {
+                                "action_code": "11",
+                                "action_remark": "等于"
+                            },
+                            {
+                                "action_code": "12",
+                                "action_remark": "不等于"
+                            },
+                            {
+                                "action_code": "13",
+                                "action_remark": "大于"
+                            },
+                            {
+                                "action_code": "14",
+                                "action_remark": "小于"
+                            },
+                            {
+                                "action_code": "15",
+                                "action_remark": "大于等与"
+                            },
+                            {
+                                "action_code": "16",
+                                "action_remark": "小于等于"
+                            },
+                            {
+                                "action_code": "17",
+                                "action_remark": "动态时间之内"
+                            },
+                            {
+                                "action_code": "18",
+                                "action_remark": "动态时间之前"
+                            }
+                        ]
+                    },
+                    {
+                        "field_id": 7,
+                        "service_id": 30,
+                        "field_service": "function",
+                        "field_name": "iterative_version_num",
+                        "field_remark": "迭代版本",
+                        "field_category": "03",
+                        "field_type": "字段类型",
+                        "field_limit": null,
+                        "condition_action_list": [
+                            {
+                                "action_code": "05",
+                                "action_remark": "属于"
+                            },
+                            {
+                                "action_code": "06",
+                                "action_remark": "不属于"
+                            },
+                            {
+                                "action_code": "03",
+                                "action_remark": "为空"
+                            },
+                            {
+                                "action_code": "04",
+                                "action_remark": "不为空"
+                            }
+                        ]
+                    },
+                    {
+                        "field_id": 8,
+                        "service_id": 30,
+                        "field_service": "function",
+                        "field_name": "estimated_workload",
+                        "field_remark": "预估工作量",
+                        "field_category": "04",
+                        "field_type": "字段类型",
+                        "field_limit": null,
+                        "condition_action_list": [
+                            {
+                                "action_code": "10",
+                                "action_remark": "之间"
+                            },
+                            {
+                                "action_code": "11",
+                                "action_remark": "等于"
+                            },
+                            {
+                                "action_code": "12",
+                                "action_remark": "不等于"
+                            },
+                            {
+                                "action_code": "13",
+                                "action_remark": "大于"
+                            },
+                            {
+                                "action_code": "14",
+                                "action_remark": "小于"
+                            },
+                            {
+                                "action_code": "15",
+                                "action_remark": "大于等与"
+                            },
+                            {
+                                "action_code": "16",
+                                "action_remark": "小于等于"
+                            },
+                            {
+                                "action_code": "03",
+                                "action_remark": "为空"
+                            },
+                            {
+                                "action_code": "04",
+                                "action_remark": "不为空"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/UserService/view/configView",
+            "desc": "配置用户视图",
+            "mock": "true",
+            "res": {
+                "code": 200,
+                "remark": "成功"
+            }
+        },
+        {
+            "url": "/UserService/view/deleteView",
+            "desc": "删除用户视图",
+            "mock": "true",
+            "res": {
+                "code": 200,
+                "remark": "成功"
+            }
+        },
+        {
+            "url": "/UserService/view/createView",
+            "desc": "新建用户视图",
+            "mock": "true",
+            "res": {
+                "code": 200,
+                "remark": "成功"
+            }
+        },
+        {
+            "url": "/UserService/view/updateView",
+            "desc": "编辑用户视图",
+            "mock": "true",
+            "res": {
+                "code": 200,
+                "remark": "成功"
+            }
+        },
+        {
+            "url": "/UserService/view/queryDetail",
+            "desc": "查询用户详情",
+            "mock": "true",
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": {
+                    "view_id|+1": 1,
+                    "view_title": "@cword(1,50)",
+                    "service_id": 30,
+                    "project_id": 1,
+                    "view_type|1": ["01", "02", "03", "04", "05", "06"],
+                    "view_condition_relation|1": ["01", "02"],
+                    "create_user_id": "@integer(20,40)",
+                    "create_user_name": "@cword(2,3)",
+                    "create_time": "@DATETIME('yyyy-MM-dd HH:mm:ss)",
+                    "update_time": "@DATETIME('yyyy-MM-dd HH:mm:ss)",
+                    "view_condition_list": [
+                        {
+                            "condition_id|+1": 1,
+                            "view_id|+1": 1,
+                            "field_id": 1,
+                            "field_name": "func_require_num",
+                            "field_remark": "编号",
+                            "action_code": "01",
+                            "action_name": "包含",
+                            "condition_value": "[123]",
+                            "field_category": "01"
+                        },
+                        {
+                            "condition_id|+1": 1,
+                            "view_id|+1": 1,
+                            "field_id": 7,
+                            "field_name": "iterative_version_num",
+                            "field_remark": "迭代版本",
+                            "action_code": "06",
+                            "action_name": "不属于",
+                            "condition_value":
+                                "[{'value_id':1,'value_name':'v1.0'},{'value_id':2,'value_name':'v1.0.1'},{'value_id':4,'value_name':'v1.0.2'}]",
+                            "field_category": "03"
+                        },
+                        {
+                            "condition_id|+1": 1,
+                            "view_id|+1": 1,
+                            "field_id": 4,
+                            "field_name": "updator_name",
+                            "field_remark": "当前处理人",
+                            "action_code": "07",
+                            "action_name": "是",
+                            "condition_value": "[{'value_id':15,'value_name':'王五3'}]",
+                            "field_category": "02"
+                        },
+                        {
+                            "condition_id|+1": 1,
+                            "view_id|+1": 1,
+                            "field_id": 5,
+                            "field_name": "create_time",
+                            "field_remark": "创建时间",
+                            "action_code": "17",
+                            "action_name": "动态时间段之内",
+                            "condition_value": "['02',30]",
+                            "field_category": "05"
+                        },
+                        {
+                            "condition_id|+1": 1,
+                            "view_id|+1": 1,
+                            "field_id": 8,
+                            "field_name": "estimated_workload",
+                            "field_remark": "预估工作量",
+                            "action_code": "10",
+                            "action_name": "之间",
+                            "condition_value": "[2,30]",
+                            "field_category": "04"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "url": "/UserService/user/queryTableField",
+            "desc": "查询用户配置可以配置列表字段",
+            "mock": "true",
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": [
+                    {
+                        "field_id": 1,
+                        "service_id": 30,
+                        "field_remark": "ID",
+                        "field_name": "defect_num",
+                        "field_type": "01",
+                        "can_sort": false,
+                        "can_search": false,
+                        "is_default": false
+                    },
+                    {
+                        "field_id": 2,
+                        "service_id": 30,
+                        "field_remark": "标题",
+                        "field_name": "defect_title",
+                        "field_type": "01",
+                        "can_sort": false,
+                        "can_search": false,
+                        "is_default": true
+                    },
+                    {
+                        "field_id": 3,
+                        "service_id": 30,
+                        "field_remark": "严重级别",
+                        "field_name": "severity_level_content",
+                        "field_type": "01",
+                        "can_sort": false,
+                        "can_search": false,
+                        "is_default": true
+                    },
+                    {
+                        "field_id": 4,
+                        "service_id": 30,
+                        "field_remark": "期望解决版本",
+                        "field_name": "hope_solve_version_name",
+                        "field_type": "02",
+                        "can_sort": false,
+                        "can_search": false,
+                        "is_default": false
+                    },
+                    {
+                        "field_id": 5,
+                        "service_id": 30,
+                        "field_remark": "状态",
+                        "field_name": "defect_state_name",
+                        "field_type": "01",
+                        "can_sort": false,
+                        "can_search": false,
+                        "is_default": true
+                    },
+                    {
+                        "field_id": 6,
+                        "service_id": 30,
+                        "field_remark": "当前处理人",
+                        "field_name": "curr_proc_user_name",
+                        "field_type": "01",
+                        "can_sort": false,
+                        "can_search": false,
+                        "is_default": true
+                    },
+                    {
+                        "field_id": 7,
+                        "service_id": 30,
+                        "field_remark": "创建人",
+                        "field_name": "create_user_name",
+                        "field_type": "01",
+                        "can_sort": false,
+                        "can_search": false,
+                        "is_default": true
+                    },
+                    {
+                        "field_id": 8,
+                        "service_id": 30,
+                        "field_remark": "创建时间",
+                        "field_name": "defect_create_time",
+                        "field_type": "01",
+                        "can_sort": false,
+                        "can_search": false,
+                        "is_default": true
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/UserService/view/queryViewTableField",
+            "desc": "查询视图配置的列表(包括可选和已选)",
+            "mock": "true",
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": {
+                    "user_config_field_list": [
+                        {
+                            "field_id": 2,
+                            "service_id": 30,
+                            "field_remark": "标题",
+                            "field_name": "defect_title",
+                            "field_type": "01",
+                            "can_sort": false,
+                            "can_search": false,
+                            "is_default": true
+                        },
+                        {
+                            "field_id": 5,
+                            "service_id": 30,
+                            "field_remark": "状态",
+                            "field_name": "defect_state_name",
+                            "field_type": "01",
+                            "can_sort": false,
+                            "can_search": false,
+                            "is_default": true
+                        },
+                        {
+                            "field_id": 6,
+                            "service_id": 30,
+                            "field_remark": "当前处理人",
+                            "field_name": "curr_proc_user_name",
+                            "field_type": "01",
+                            "can_sort": false,
+                            "can_search": false,
+                            "is_default": true
+                        },
+                        {
+                            "field_id": 7,
+                            "service_id": 30,
+                            "field_remark": "创建人",
+                            "field_name": "create_user_name",
+                            "field_type": "01",
+                            "can_sort": false,
+                            "can_search": false,
+                            "is_default": true
+                        },
+                        {
+                            "field_id": 8,
+                            "service_id": 30,
+                            "field_remark": "创建时间",
+                            "field_name": "defect_create_time",
+                            "field_type": "01",
+                            "can_sort": false,
+                            "can_search": false,
+                            "is_default": true
+                        }
+                    ],
+                    "service_field_list": [
+                        {
+                            "field_id": 2,
+                            "field_service": "defect",
+                            "field_remark": "标题",
+                            "field_name": "require_title",
+                            "field_type": "01",
+                            "can_sort": false,
+                            "can_search": false,
+                            "is_default": true
+                        },
+                        {
+                            "field_id": 5,
+                            "field_service": "defect",
+                            "field_remark": "状态",
+                            "field_name": "require_status",
+                            "field_type": "01",
+                            "can_sort": false,
+                            "can_search": false,
+                            "is_default": true
+                        },
+                        {
+                            "field_id": 6,
+                            "field_service": "defect",
+                            "field_remark": "当前处理人",
+                            "field_name": "curr_proc_user_name",
+                            "field_type": "01",
+                            "can_sort": false,
+                            "can_search": false,
+                            "is_default": true
+                        },
+                        {
+                            "field_id": 7,
+                            "field_service": "defect",
+                            "field_remark": "创建人",
+                            "field_name": "create_user_name",
+                            "field_type": "01",
+                            "can_sort": false,
+                            "can_search": false,
+                            "is_default": false
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "url": "/UserService/user/queryUserTableField",
+            "desc": "查询用户配置的配置列表字段，仅限业务需求和缺陷",
+            "mock": "true",
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": [
+                    {
+                        "field_id": 2,
+                        "field_service": "defect",
+                        "field_remark": "标题",
+                        "field_name": "require_title",
+                        "field_type": "01",
+                        "can_sort": false,
+                        "can_search": false
+                    },
+                    {
+                        "field_id": 5,
+                        "field_service": "defect",
+                        "field_remark": "状态",
+                        "field_name": "require_status",
+                        "field_type": "01",
+                        "can_sort": false,
+                        "can_search": false
+                    },
+                    {
+                        "field_id": 6,
+                        "field_service": "defect",
+                        "field_remark": "当前处理人",
+                        "field_name": "curr_proc_user_name",
+                        "field_type": "01",
+                        "can_sort": false,
+                        "can_search": false
+                    },
+                    {
+                        "field_id": 7,
+                        "field_service": "defect",
+                        "field_remark": "创建人",
+                        "field_name": "create_user_name",
+                        "field_type": "01",
+                        "can_sort": false,
+                        "can_search": false
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/UserService/user/configUserTableField",
+            "desc": "用户自定义表头配置",
+            "mock": "true",
+            "res": {
+                "code": 200,
+                "remark": "成功"
+            }
+        },
+        {
+            "url": "/UserService/user/v1/getUserToken",
+            "desc": "suerToken",
+            "mock": "true",
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "userToken": "fef202fd99ae4f75bdaae99ebb1ab505"
+            }
+        },
+        {
+            "url": "/UserService/user/v1/getSingleUseToken",
+            "desc": "suerToken",
+            "mock": "true",
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": "fef202fd99ae4f75bdaae99ebb1ab505"
+            }
+        },
+        {
+            "url": "/UserService/project/queryprojectlist",
+            "desc": "查询项目列表，所有的项目，需求池，复制需求表单，关联项目",
+            "mock": "true",
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "projects": [
+                    {
+                        "projectId": 4,
+                        "projectName": "风险管控审计项目组",
+                        "projectCreatorid": 69,
+                        "require_group_id": 1,
+                        "type": 2
+                    },
+                    {
+                        "projectId": 9,
+                        "projectName": "结算项目组",
+                        "projectCreatorid": 130,
+                        "require_group_id": 1,
+                        "type": 2
+                    },
+                    {
+                        "projectId": 12,
+                        "projectName": "当前需求所属的项目",
+                        "projectCreatorid": 130,
+                        "require_group_id": 1,
+                        "type": 2
+                    },
+                    {
+                        "projectId": 10,
+                        "projectName": "一级经营分析项目组",
+                        "projectCreatorid": 71,
+                        "require_group_id": 1,
+                        "type": 2
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/UserService/project/queryProjectListInUser",
+            "desc": "查询项目列表，首页点进去即展示",
+            "mock": "true",
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": {
+                    "projectMemberList": [
+                        {
+                            "id": 78,
+                            "uid": 88,
+                            "pid": 6,
+                            "rid": 3,
+                            "userId": 88,
+                            "userName": "朱一",
+                            "userPy": "zhudechao",
+                            "userRole": "开发工程师",
+                            "projectName": "产品与能力系统"
+                        },
+                        {
+                            "id": 5695,
+                            "uid": 88,
+                            "pid": 12,
+                            "rid": 2,
+                            "userId": 88,
+                            "userName": "朱二",
+                            "userPy": "zhudechao",
+                            "userRole": "项目经理",
+                            "projectName": "SPMS云开发"
+                        }
+                    ],
+                    "projectInOpenList": [
+                        {
+                            "pid": 12,
+                            "name": "SPMS",
+                            "creatorId": 17,
+                            "require_group_id": 1,
+                            "projectDetail": "详情详情",
+                            "visible": 1,
+                            "privilegeType": "02",
+                            "requirePrivilegeType": "02"
+                        },
+                        {
+                            "pid": 177,
+                            "name": "bigData",
+                            "creatorId": 172,
+                            "require_group_id": 1,
+                            "projectDetail": "详情详情",
+                            "visible": 1,
+                            "privilegeType": "02",
+                            "requirePrivilegeType": "01"
+                        },
+                        {
+                            "pid": 77,
+                            "name": "SDK",
+                            "creatorId": 172,
+                            "require_group_id": 1,
+                            "projectDetail": "详情详情",
+                            "visible": 1,
+                            "privilegeType": "02",
+                            "requirePrivilegeType": "01"
+                        },
+                        {
+                            "pid": 87,
+                            "name": "UEM",
+                            "creatorId": 172,
+                            "require_group_id": 1,
+                            "projectDetail": "详情详情",
+                            "visible": 1,
+                            "privilegeType": "02",
+                            "requirePrivilegeType": "01"
+                        }
+                    ],
+                    "projectAllList": [
+                        {
+                            "pid": 1,
+                            "name": "项目1",
+                            "creatorid": 1,
+                            "require_group_id": 1,
+                            "visible": 1,
+                            "privilegetype": "01"
+                        },
+                        {
+                            "pid": 2,
+                            "name": "项目2",
+                            "creatorid": 61,
+                            "require_group_id": 1,
+                            "visible": 1,
+                            "privilegetype": "01"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "url": "/UserService/project/queryForPaging",
+            "desc": "查询项目列表，首页点进去即展示",
+            "mock": "true",
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": {
+                    "result": [
+                        {
+                            "pid": "1",
+                            "name": "项目1",
+                            "creatorid": 1,
+                            "require_group_id": 1,
+                            "visible": 1,
+                            "privilegetype": "01",
+                            "top_pid": 1,
+                            "top_name": "顶层项目名称1"
+                        },
+                        {
+                            "pid": "2",
+                            "name": "项目2",
+                            "creatorid": 61,
+                            "require_group_id": 1,
+                            "visible": 1,
+                            "privilegetype": "01",
+                            "top_pid": 2,
+                            "top_name": "顶层项目名称2"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "url": "/UserService/userCount/queryUserTodo",
+            "desc": "查询用户所有的代办事项数量",
+            "mock": "true",
+            "res": {
+                "result": [
+                    {
+                        "index": 0,
+                        "module": "requirement",
+                        "text": "业务需求",
+                        "counts": 0
+                    },
+                    {
+                        "index": 1,
+                        "module": "defect",
+                        "text": "缺陷管理",
+                        "counts": 0
+                    },
+                    {
+                        "index": 2,
+                        "module": "task",
+                        "text": "任务管理",
+                        "counts": 0
+                    },
+                    {
+                        "index": 3,
+                        "module": "businessWorkOrder",
+                        "text": "业务工单",
+                        "counts": 0
+                    },
+                    {
+                        "index": 4,
+                        "module": "developWorkOrder",
+                        "text": "研发工单",
+                        "counts": 0
+                    },
+                    {
+                        "index": 5,
+                        "module": "device",
+                        "text": "测试设备",
+                        "counts": 0
+                    },
+                    {
+                        "index": 6,
+                        "module": "workOrder",
+                        "text": "安管工单",
+                        "counts": 20
+                    },
+                    {
+                        "index": 7,
+                        "module": "function",
+                        "text": "功能需求",
+                        "counts": 0
+                    },
+                    {
+                        "index": 8,
+                        "module": "countsersign",
+                        "text": "文件会签",
+                        "counts": 0
+                    },
+                    {
+                        "index": 9,
+                        "module": "feedback",
+                        "text": "用户反馈",
+                        "counts": 0
+                    },
+                    {
+                        "index": 10,
+                        "module": "developmentPermission",
+                        "text": "研发工单Plus",
+                        "counts": 0
+                    },
+                    {
+                        "index": 11,
+                        "module": "businessPermission",
+                        "text": "业务工单Plus",
+                        "counts": 0
+                    },
+                    {
+                        "index": 12,
+                        "module": "budgetApply",
+                        "text": "年度申报",
+                        "counts": 0,
+                        "remark": "年度申报待办服务无响应！"
+                    },
+                    {
+                        "index": 13,
+                        "module": "projectboard",
+                        "text": "项目看板",
+                        "counts": 0,
+                        "remark": "项目看板请求成功"
+                    },
+                    {
+                        "index": 14,
+                        "module": "outsource",
+                        "text": "外协管理",
+                        "counts": 0,
+                        "remark": "外协管理请求成功"
+                    }
+                ],
+                "code": 200,
+                "remark": "成功"
+            }
+        },
+        {
+            "url": "/UserService/userCount/myCreateCount",
+            "desc": "查询用户所有的我创建的",
+            "mock": "true",
+            "res": {
+                "result": [
+                    {
+                        "index": 0,
+                        "module": "requirement",
+                        "text": "业务需求",
+                        "counts": 10
+                    },
+                    {
+                        "index": 1,
+                        "module": "defect",
+                        "text": "缺陷管理",
+                        "counts": 20
+                    },
+                    {
+                        "index": 2,
+                        "module": "task",
+                        "text": "任务管理",
+                        "counts": 0
+                    },
+                    {
+                        "index": 8,
+                        "module": "countersign",
+                        "text": "文件会签",
+                        "counts": 0
+                    },
+                    {
+                        "index": 9,
+                        "module": "feedback",
+                        "text": "用户反馈",
+                        "counts": 0
+                    },
+                    {
+                        "index": 13,
+                        "module": "projectboard",
+                        "text": "项目看板",
+                        "counts": 10,
+                        "remark": "项目看板请求成功"
+                    }
+                ],
+                "code": 200,
+                "remark": "成功"
+            }
+        },
+        {
+            "url": "/UserService/formdata/query",
+            "desc": "获取新建、编辑页面未提交的数据",
+            "mock": "true",
+            "res": {
+                "result": {
+                    "require_id": 1,
+                    "require_num": "00001",
+                    "require_title": "@integer(1,20)增加早晚提示员工打卡的闹钟功能",
+                    "require_desc": "&nbsp;&*&)(*desc_增加早晚提示员工打卡的闹钟功能???????",
+                    "require_val": "require_val",
+                    "relevance_pro": "1",
+                    "require_dep": 1,
+                    "right_type": "01",
+                    "hope_time": "2018-12-13",
+                    "priority_type": "2",
+                    "priority_rank": 5,
+                    "require_status": 4,
+                    "current_proc_uid": 1,
+                    "creator_uid": 1,
+                    "create_time": "2009-09-09 23:22:11",
+                    "update_time": "2009-09-09 23:22:11",
+                    "record_flag": true,
+                    "thumbsup_Num": 1,
+                    "thumbsup_Flag": false,
+                    "require_group_name": "咪咕音乐@integer(1,10)",
+                    "curr_status_name": "admin@integer(1,20)",
+                    "username": "admin",
+                    "require_type": "01",
+                    "create_user_name": "admin",
+                    "project_name": "SPMS@integer(1,20)",
+                    "operator_type": "window@integer(7,11)",
+                    "require_score_list": [
+                        {
+                            "id": 45,
+                            "project_id": 188,
+                            "require_id": 232,
+                            "score_value": 4,
+                            "score_user_id": 88,
+                            "score_user_name": "朱得超",
+                            "score_user_department_group_id": 10001,
+                            "score_user_department_group_name": "TSG",
+                            "record_time": "2017-08-18 17:21:45",
+                            "remark": "wetyu"
+                        }
+                    ],
+                    "sign_num": "@integer(1,50)",
+                    "sign_id": "@integer(1,50)",
+                    "sign_title": "@csentence(3,35)",
+                    "countersignAttachmentList|5": [
+                        {
+                            "fileId": "@integer(1,100)",
+                            "fileCode": "file@integer(1,100)",
+                            "filelink":
+                                "/FileService/file/downloadattachment/service/require/file/3caf5b40b59d75fff857be350e42097b",
+                            "fileName": "@csentence(3,35)",
+                            "fileSize": "@float(60, 500, 0, 2)",
+                            "createTime": "@datetime()",
+                            "creatorId": "@natural(1, 100)",
+                            "uploaderName": "@csentence(2, 4)",
+                            "projectId": "@natural(1, 100)",
+                            "projectName": "spms@csentence()",
+                            "referenceId": "00001"
+                        }
+                    ],
+                    "attachmentList|5": [
+                        {
+                            "fileId": "@integer(1,100)",
+                            "fileCode": "file@integer(1,100)",
+                            "filelink":
+                                "/FileService/file/downloadattachment/service/require/file/3caf5b40b59d75fff857be350e42097b",
+                            "fileName": "@csentence(3,35)",
+                            "fileSize": "@float(60, 500, 0, 2)",
+                            "createTime": "@datetime()",
+                            "creatorId": "@natural(1, 100)",
+                            "uploaderName": "@csentence(2, 4)",
+                            "projectId": "@natural(1, 100)",
+                            "projectName": "spms@csentence()",
+                            "referenceId": "00001"
+                        }
+                    ],
+                    "commentList|5": [
+                        {
+                            "require_com_id": "@integer(1,100)",
+                            "require_num": "@integer(1,10000)",
+                            "record_time": "2017-03-06 11:04:58",
+                            "remark": "@cparagraph(1, 3)",
+                            "creator_uid": "@natural(1, 100)",
+                            "creator_user_name": "朱德操"
+                        }
+                    ],
+                    "historyList|5": [
+                        {
+                            "require_his_id": "@integer(1,100)",
+                            "require_num": "@integer(100,10000)",
+                            "record_time": "@datetime()",
+                            "remark":
+                                "==将原需求描述：哈哈哈哈 哈哈哈哈e哈哈哈哈 哈哈哈哈e哈哈哈哈 哈哈哈哈e哈哈哈哈哈哈哈哈e哈哈哈哈哈哈哈哈e哈哈哈哈哈哈哈哈e哈哈哈哈哈哈哈哈e哈哈哈哈哈哈哈哈e哈哈哈哈哈哈哈哈e哈哈哈哈 哈哈哈哈e哈哈哈哈 哈哈哈哈e 更改为 @integer(1,100)哈哈哈哈 哈哈哈哈e&lt;br /&gt;dadaadddddddddddd==",
+                            "creator_uid": "@natural(1, 100)",
+                            "operate_type": "window@integer(7,11)",
+                            "creator_user_name": "李倩茜"
+                        }
+                    ],
+                    "authoritys": {
+                        "priorityAuthority": "@boolean()",
+                        "closeAuthority": "@boolean()",
+                        "editAuthority": "@boolean()",
+                        "relPrjAuthority": "@boolean()"
+                    },
+                    "buttonList": ["106", "116", "107", "112", "114", "118", "113", "119", "120", "117"],
+                    "related_require_list|2": [
+                        {
+                            "require_info": {
+                                "require_title": "需求标题@csentence()",
+                                "require_num": "@integer(1,10000)",
+                                "create_user_name": "@integer(1,20)红太狼",
+                                "project_name": "qqli-test",
+                                "curr_proc_user_name": "灰太狼",
+                                "curr_status_name": "待排期",
+                                "remark": "上一操作名称",
+                                "upper_name": "上一处理人名称",
+                                "update_time": "更新时间",
+                                "require_joint_debug_time": "2017-06-06",
+                                "planned_completion_time": "",
+                                "require_id": "@integer(1,10000)"
+                            },
+                            "relation_type": 1
+                        }
+                    ],
+                    "developerList": [
+                        {
+                            "developer_id": 1,
+                            "developer_name": "小猪"
+                        }
+                    ],
+                    "feedback_id": "123456"
+                },
+                "code": 200,
+                "remark": "成功"
+            }
+        },
+        {
+            "url": "/UserService/user/queryAppServiceList",
+            "desc": "查询应用系统列表",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功!",
+                "result": [
+                    {
+                        "user_id": 7003,
+                        "service_id": 4,
+                        "interest_flag": 0,
+                        "group_id": 1,
+                        "remark": "业务需求",
+                        "icon": "icon-idea",
+                        "background": "require-bc",
+                        "url": "/spms/static/requirement/index.html#/"
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 13,
+                        "interest_flag": 0,
+                        "group_id": 1,
+                        "remark": "文档管理",
+                        "icon": "icon-file",
+                        "background": "task-bc",
+                        "url": "/spms/static/document/index.html#/"
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 11,
+                        "interest_flag": 0,
+                        "group_id": 1,
+                        "remark": "文件会签",
+                        "icon": "icon-dianzihuiqian",
+                        "background": "require-bc",
+                        "url": "/spms/static/countersign/index.html#/"
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 5,
+                        "interest_flag": 0,
+                        "group_id": 1,
+                        "remark": "任务管理",
+                        "icon": "icon-task",
+                        "background": "task-bc",
+                        "url": "/spms/static/task/index.html#/"
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 3,
+                        "interest_flag": 0,
+                        "group_id": 2,
+                        "remark": "缺陷管理",
+                        "icon": "icon-bug",
+                        "background": "crisis-bc",
+                        "url": "/spms/static/defect/index.html#/"
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 16,
+                        "interest_flag": 0,
+                        "group_id": 1,
+                        "remark": "项目看板",
+                        "icon": "icon-xiangmukanban",
+                        "background": "task-bc",
+                        "url": "/spms/static/projectsboard/index.html#/"
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 6,
+                        "interest_flag": 0,
+                        "group_id": 2,
+                        "remark": "研发工单",
+                        "icon": "icon-yanfa",
+                        "background": "apply-tools-bc",
+                        "url": "/spms/static/permission/index.html#/permission/1/perApply"
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 10,
+                        "interest_flag": 0,
+                        "group_id": 3,
+                        "remark": "测试系统",
+                        "icon": "icon-test",
+                        "background": "task-bc",
+                        "url": "http://211.139.191.155:8082/ctmp/pages/login.shtml?sessionid="
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 8,
+                        "interest_flag": 1,
+                        "group_id": 2,
+                        "remark": "测试设备",
+                        "icon": "icon-test",
+                        "background": "apply-tools-bc",
+                        "url": "/spms/static/device/index.html#/"
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 8,
+                        "interest_flag": 1,
+                        "group_id": 4,
+                        "remark": "帅哥很好",
+                        "icon": "icon-test",
+                        "background": "apply-tools-bc",
+                        "url": "/spms/static/device/index.html#/"
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 8,
+                        "interest_flag": 1,
+                        "group_id": 5,
+                        "remark": "大耳朵图图",
+                        "icon": "icon-test",
+                        "background": "apply-tools-bc",
+                        "url": "/spms/static/device/index.html#/"
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 8,
+                        "interest_flag": 1,
+                        "group_id": 5,
+                        "remark": "兔子的耳朵长",
+                        "icon": "icon-test",
+                        "background": "apply-tools-bc",
+                        "url": "/spms/static/device/index.html#/"
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 8,
+                        "interest_flag": 1,
+                        "group_id": 6,
+                        "remark": "你真乖",
+                        "icon": "icon-test",
+                        "background": "apply-tools-bc",
+                        "url": "/spms/static/device/index.html#/"
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/UserService/appService/queryUserConcernedList",
+            "desc": "查询常用应用，默认9个",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功!",
+                "result": [
+                    {
+                        "user_id": 7003,
+                        "service_id": 4,
+                        "interest_flag": 0,
+                        "group_id": 1,
+                        "remark": "业务需求",
+                        "icon": "icon-idea",
+                        "background": "require-bc",
+                        "url": "/spms/static/requirement/index.html#/"
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 13,
+                        "interest_flag": 0,
+                        "group_id": 1,
+                        "remark": "文档管理",
+                        "icon": "icon-file",
+                        "background": "task-bc",
+                        "url": "/spms/static/document/index.html#/"
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 11,
+                        "interest_flag": 0,
+                        "group_id": 1,
+                        "remark": "文件会签",
+                        "icon": "icon-dianzihuiqian",
+                        "background": "require-bc",
+                        "url": "/spms/static/countersign/index.html#/"
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 5,
+                        "interest_flag": 0,
+                        "group_id": 1,
+                        "remark": "任务管理",
+                        "icon": "icon-task",
+                        "background": "task-bc",
+                        "url": "/spms/static/task/index.html#/"
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 3,
+                        "interest_flag": 0,
+                        "group_id": 2,
+                        "remark": "缺陷管理",
+                        "icon": "icon-bug",
+                        "background": "crisis-bc",
+                        "url": "/spms/static/defect/index.html#/"
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 16,
+                        "interest_flag": 0,
+                        "group_id": 1,
+                        "remark": "项目看板",
+                        "icon": "icon-xiangmukanban",
+                        "background": "task-bc",
+                        "url": "/spms/static/projectsboard/index.html#/"
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 6,
+                        "interest_flag": 0,
+                        "group_id": 2,
+                        "remark": "研发工单",
+                        "icon": "icon-yanfa",
+                        "background": "apply-tools-bc",
+                        "url": "/spms/static/permission/index.html#/permission/1/perApply"
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 10,
+                        "interest_flag": 0,
+                        "group_id": 3,
+                        "remark": "测试系统",
+                        "icon": "icon-test",
+                        "background": "task-bc",
+                        "url": "http://211.139.191.155:8082/ctmp/pages/login.shtml?sessionid="
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 8,
+                        "interest_flag": 1,
+                        "group_id": 2,
+                        "remark": "测试设备",
+                        "icon": "icon-test",
+                        "background": "apply-tools-bc",
+                        "url": "/spms/static/device/index.html#/"
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/UserService/systemUrlManagement/querySysemUrl",
+            "desc": "应用接入配置页面的列表数据查询",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功!",
+                "result": [
+                    {
+                        "user_id": 7003,
+                        "service_id": 4,
+                        "interest_flag": 0,
+                        "authority_type": "咪咕用户",
+                        "group_id": 1,
+                        "remark": "业务需求",
+                        "icon": "icon-idea",
+                        "background": "require-bc",
+                        "url": "/spms/static/requirement/index.html#/"
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 13,
+                        "interest_flag": 0,
+                        "authority_type": "全部用户",
+                        "group_id": 1,
+                        "remark": "文档管理",
+                        "icon": "icon-file",
+                        "background": "task-bc",
+                        "url": "/spms/static/document/index.html#/"
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 11,
+                        "interest_flag": 0,
+                        "authority_type": "咪咕用户",
+                        "group_id": 1,
+                        "remark": "文件会签",
+                        "icon": "icon-dianzihuiqian",
+                        "background": "require-bc",
+                        "url": "/spms/static/countersign/index.html#/"
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 5,
+                        "interest_flag": 0,
+                        "authority_type": "全部用户",
+                        "group_id": 1,
+                        "remark": "任务管理",
+                        "icon": "icon-task",
+                        "background": "task-bc",
+                        "url": "/spms/static/task/index.html#/"
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 3,
+                        "interest_flag": 0,
+                        "authority_type": "全部用户",
+                        "group_id": 2,
+                        "remark": "缺陷管理",
+                        "icon": "icon-bug",
+                        "background": "crisis-bc",
+                        "url": "/spms/static/defect/index.html#/"
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 16,
+                        "interest_flag": 0,
+                        "authority_type": "全部用户",
+                        "group_id": 1,
+                        "remark": "项目看板",
+                        "icon": "icon-xiangmukanban",
+                        "background": "task-bc",
+                        "url": "/spms/static/projectsboard/index.html#/"
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 6,
+                        "interest_flag": 0,
+                        "authority_type": "咪咕用户",
+                        "group_id": 2,
+                        "remark": "研发工单",
+                        "icon": "icon-yanfa",
+                        "background": "apply-tools-bc",
+                        "url": "/spms/static/permission/index.html#/permission/1/perApply"
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 10,
+                        "interest_flag": 0,
+                        "authority_type": "咪咕用户",
+                        "group_id": 3,
+                        "remark": "测试系统",
+                        "icon": "icon-test",
+                        "background": "task-bc",
+                        "url": "http://211.139.191.155:8082/ctmp/pages/login.shtml?sessionid="
+                    },
+                    {
+                        "user_id": 7003,
+                        "service_id": 8,
+                        "interest_flag": 1,
+                        "authority_type": "全部用户",
+                        "group_id": 2,
+                        "remark": "测试设备",
+                        "icon": "icon-test",
+                        "background": "apply-tools-bc",
+                        "url": "/spms/static/device/index.html#/"
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/UserService/project/v1/getProjectsByUserId",
+            "desc": "根据用户id查询项目列表",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功!",
+                "projects": [
+                    {
+                        "pid": 12,
+                        "name": "SPMS",
+                        "creatorId": 17,
+                        "aliasName": "ivory",
+                        "require_group_id": 1,
+                        "projectDetail": "详情详情",
+                        "visible": 1,
+                        "privilegeType": "02",
+                        "requirePrivilegeType": "02",
+                        "projBoardId": 46,
+                        "qualityAnalysisFlag": 1
+                    },
+                    {
+                        "pid": 177,
+                        "name": "bigData",
+                        "aliasName": "ivory",
+                        "creatorId": 172,
+                        "require_group_id": 1,
+                        "projectDetail": "详情详情",
+                        "visible": 1,
+                        "privilegeType": "02",
+                        "requirePrivilegeType": "01",
+                        "projBoardId": 46,
+                        "qualityAnalysisFlag": 1
+                    },
+                    {
+                        "pid": 77,
+                        "name": "SDK",
+                        "aliasName": "ivory",
+                        "creatorId": 172,
+                        "require_group_id": 1,
+                        "projectDetail": "详情详情",
+                        "visible": 1,
+                        "privilegeType": "02",
+                        "requirePrivilegeType": "01"
+                    },
+                    {
+                        "pid": 87,
+                        "name": "UEM",
+                        "aliasName": "ivory",
+                        "creatorId": 172,
+                        "require_group_id": 1,
+                        "projectDetail": "详情详情",
+                        "visible": 1,
+                        "privilegeType": "02",
+                        "requirePrivilegeType": "01"
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/UserService/project/querycompanyname",
+            "desc": "新建项目时，搜索所属公司",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "查询所属公司成功",
+                "result": [
+                    {
+                        "companyId": 1,
+                        "companyName": "咪咕音乐"
+                    },
+                    {
+                        "companyId": 2,
+                        "companyName": "咪咕圈圈"
+                    },
+                    {
+                        "companyId": 3,
+                        "companyName": "咪咕阅读"
+                    },
+                    {
+                        "companyId": 4,
+                        "companyName": "咪咕视讯"
+                    },
+                    {
+                        "companyId": 5,
+                        "companyName": "其它"
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/UserService/project/insertprojectversion",
+            "desc": "新增版本",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "pv": {
+                    "projectId": 77,
+                    "projectVersion": "h",
+                    "projectVersionId": 115
+                }
+            }
+        },
+        {
+            "url": "/UserService/role/queryRoleList",
+            "desc": "查询角色列表",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "roles": [
+                    {
+                        "roleId": 1,
+                        "roleName": "系统管理员"
+                    },
+                    {
+                        "roleId": 2,
+                        "roleName": "项目经理"
+                    },
+                    {
+                        "roleId": 3,
+                        "roleName": "开发工程师"
+                    },
+                    {
+                        "roleId": 4,
+                        "roleName": "测试工程师"
+                    },
+                    {
+                        "roleId": 5,
+                        "roleName": "其它"
+                    },
+                    {
+                        "roleId": 6,
+                        "roleName": "未定义"
+                    },
+                    {
+                        "roleId": 7,
+                        "roleName": "测试经理"
+                    },
+                    {
+                        "roleId": 8,
+                        "roleName": "开发经理"
+                    },
+                    {
+                        "roleId": 9,
+                        "roleName": "产品经理"
+                    },
+                    {
+                        "roleId": 10,
+                        "roleName": "质量经理"
+                    },
+                    {
+                        "roleId": 11,
+                        "roleName": "UI设计师"
+                    },
+                    {
+                        "roleId": 12,
+                        "roleName": "系统操作员"
+                    },
+                    {
+                        "roleId": 13,
+                        "roleName": "部门经理"
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/UserService/user/pageQuery",
+            "desc": "在线搜索咪咕员工",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": [
+                    {
+                        "uid": "4556",
+                        "username": "杨毅",
+                        "email": "yangyi@migu.cn",
+                        "password": "e10adc3949ba59abbe56e057f20f883e",
+                        "tel": "18782065810",
+                        "enabled": 1,
+                        "require_group_id": 1,
+                        "companyName": "咪咕文化科技有限公司",
+                        "roleid": 3,
+                        "roleName": "开发工程师",
+                        "departmentid": 1082,
+                        "departmentName": "TSG-平台能力单元",
+                        "loginflag": false,
+                        "admin": 0,
+                        "username_py": "yangyi",
+                        "belong_location": "C",
+                        "locationName": "成都"
+                    },
+                    {
+                        "uid": 112,
+                        "username": "杨毅_yy",
+                        "email": "yangyi_yy@migu.cn",
+                        "password": "e10adc3949ba59abbe56e057f20f883e",
+                        "tel": "13730832449",
+                        "enabled": 1,
+                        "require_group_id": 1,
+                        "companyName": "咪咕文化科技有限公司",
+                        "roleid": 2,
+                        "roleName": "项目经理",
+                        "departmentid": 1082,
+                        "departmentName": "TSG-平台能力单元",
+                        "loginflag": false,
+                        "admin": 1,
+                        "username_py": "yangyi_yy",
+                        "belong_location": "C",
+                        "locationName": "成都"
+                    },
+                    {
+                        "uid": 628,
+                        "username": "杨毅斌",
+                        "email": "yangyibin@migu.cn",
+                        "password": "0cc175b9c0f1b6a831c399e269772661",
+                        "tel": "13950169669",
+                        "enabled": 1,
+                        "require_group_id": 3,
+                        "companyName": "咪咕动漫有限公司",
+                        "roleid": 6,
+                        "roleName": "未定义",
+                        "departmentid": 1088,
+                        "departmentName": "彩印事业部",
+                        "loginflag": false,
+                        "admin": 0,
+                        "username_py": "yangyibin",
+                        "belong_location": "C",
+                        "locationName": "成都"
+                    },
+                    {
+                        "uid": 4294,
+                        "username": "杨毅斌・彩印",
+                        "email": "yangyibin@migu.cn",
+                        "password": "0cc175b9c0f1b6a831c399e269772661",
+                        "tel": "13950169669",
+                        "enabled": 1,
+                        "require_group_id": 3,
+                        "companyName": "咪咕动漫有限公司",
+                        "roleid": 6,
+                        "roleName": "未定义",
+                        "departmentid": 1088,
+                        "departmentName": "彩印事业部",
+                        "loginflag": false,
+                        "admin": 0,
+                        "username_py": "yangyibin",
+                        "belong_location": "C",
+                        "locationName": "成都"
+                    },
+                    {
+                        "uid": 4330,
+                        "username": "杨以通",
+                        "email": "yangyitong@migu.cn",
+                        "password": "0cc175b9c0f1b6a831c399e269772661",
+                        "tel": "18228041099",
+                        "enabled": 1,
+                        "require_group_id": 1,
+                        "companyName": "咪咕文化科技有限公司",
+                        "roleid": 6,
+                        "roleName": "未定义",
+                        "departmentid": 1082,
+                        "departmentName": "TSG-平台能力单元",
+                        "loginflag": false,
+                        "admin": 0,
+                        "username_py": "yangyitong",
+                        "belong_location": "C",
+                        "locationName": "成都"
+                    }
+                ],
+                "basePage": {
+                    "pageNo": 1,
+                    "pageSize": 10,
+                    "pages": 1,
+                    "rowSrt": 0,
+                    "rowEnd": 4,
+                    "counts": 5
+                }
+            }
+        },
+        {
+            "url": "/UserService/project/queryprojectversionlist",
+            "desc": "获取版本号、列表",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "versions": [
+                    {
+                        "projectId": 12,
+                        "projectVersion": "v1.1.0",
+                        "projectVersionId": 3
+                    }
+                ]
+            }
+        },
+        {
+            "url": "UserService/project/deleteproject",
+            "desc": "删除项目",
+            "code": 200,
+            "remark": "成功"
+        },
+        {
+            "url": "/UserService/project/queryprojectmodulelist",
+            "desc": "获取模块列表",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "versions": [
+                    {
+                        "projectId": 12,
+                        "projectModule": "缺陷管理",
+                        "projectModuleId": 137
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/UserService/user/addComment",
+            "desc": "新增评论",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "result": {
+                    "comment_id": "@id(1,4)",
+                    "service_name": "service_name",
+                    "comment_user_id": "@id(1,4)",
+                    "comment_user_name": "@cname()",
+                    "comment_content": "@cword(5,10)",
+                    "comment_create_time": "@datetime"
+                },
+                "remark": "success"
+            }
+        },
+        {
+            "url": "/UserService/user/deleteComment",
+            "desc": "删除评论",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "success"
+            }
+        },
+        {
+            "url": "/UserService/user/queryComment",
+            "desc": "查询评论",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "success",
+                "result|4": [
+                    {
+                        "comment_id": "@id(1,4)",
+                        "service_name": "service_name",
+                        "comment_user_id": "@id(1,4)",
+                        "comment_user_name": "@cname()",
+                        "comment_content": "@cword(5,10)",
+                        "comment_create_time": "@datetime"
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/UserService/role/queryUserRoleInProject",
+            "desc": "查询用户在项目组里面的所有角色列表",
+            "mock": "true",
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "roles|3": [
+                    {
+                        "roleId": "@integer(1,10)",
+                        "roleName": "@cword(2,4)"
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/UserService/user/queryUserListInProject",
+            "desc": "在线查询项目组内成员",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": [
+                    {
+                        "id": 143,
+                        "uid": 13,
+                        "pid": 6,
+                        "rid": 3,
+                        "userName": "王思聪",
+                        "userRole": "开发工程师",
+                        "projectName": "SPMS开发云",
+                        "userId": 10
+                    },
+                    {
+                        "id": 143,
+                        "uid": 153,
+                        "pid": 6,
+                        "rid": 3,
+                        "userName": "马冬梅",
+                        "userRole": "测试工程师",
+                        "projectName": "MS-SDK",
+                        "userId": 11
+                    },
+                    {
+                        "id": 143,
+                        "uid": 153,
+                        "pid": 6,
+                        "rid": 3,
+                        "userName": "李彦宏",
+                        "userRole": "运维工程师",
+                        "projectName": "OA",
+                        "userId": 12
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/UserService/project/queryprojectdetail",
+            "desc": "项目详情",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "projectInfo": {
+                    "projectId": 12,
+                    "editRight": false,
+                    "projectName": "SPMS开发云",
+                    "projectDetail": "协作、高效",
+                    "defectRight": "01",
+                    "requireRight": "02",
+                    "funcRequireDimension": "02",
+                    "uproject|2": [
+                        {
+                            "userProjectId": "@integer(1,10)",
+                            "userId": "@integer(1,10)",
+                            "projectId": "@integer(1,10)",
+                            "userRoleId": 3,
+                            "userName": "杨强@integer(1,10)",
+                            "userPy": "yangqiang@integer(1,10)",
+                            "userRole": "开发工程师"
+                        },
+                        {
+                            "userProjectId": "@integer(1,10)",
+                            "userId": "@integer(1,10)",
+                            "projectId": 12,
+                            "userRoleId": 2,
+                            "userName": "杨毅@integer(1,10)",
+                            "userPy": "yangyi@integer(1,10)",
+                            "userRole": "项目经理"
+                        }
+                    ],
+                    "defectDepLeadPersonsOnline": [],
+                    "defectMaintPersonsOnline": [],
+                    "defectTechniquePersons": [],
+                    "requireSubCompanyApprPersons": [],
+                    "requireTechnologyApprPersons": [],
+                    "defectTechPersonsOnline": [
+                        {
+                            "approve_id": 577,
+                            "pid": 12,
+                            "approve_type": "03",
+                            "approve_uid": 64,
+                            "approve_sn": 1,
+                            "creator_id": 64,
+                            "createtime": "2017-04-28",
+                            "service_id": 3,
+                            "userName": "李康",
+                            "approve_user_name": "李康"
+                        }
+                    ],
+                    "pmodule": [
+                        {
+                            "pid": 12,
+                            "projectModule": "业务需求池",
+                            "projectModuleId": 33
+                        },
+                        {
+                            "pid": 12,
+                            "projectModule": "任务管理",
+                            "projectModuleId": 34
+                        }
+                    ],
+                    "pversion": [
+                        {
+                            "projectId": 12,
+                            "projectVersion": "v1.1.0",
+                            "projectVersionId": 3
+                        }
+                    ],
+                    "bpersons": [],
+                    "spersons": [
+                        {
+                            "approve_id": 475,
+                            "pid": 12,
+                            "approve_type": "01",
+                            "approve_uid": 214,
+                            "approve_sn": 1,
+                            "creator_id": 64,
+                            "createtime": "2017-04-26",
+                            "require_group_id": 2,
+                            "service_id": 4,
+                            "userName": "李琴",
+                            "approve_user_name": "无"
+                        }
+                    ],
+                    "tpersons": [
+                        {
+                            "approve_id": 476,
+                            "pid": 12,
+                            "approve_type": "03",
+                            "approve_uid": 64,
+                            "approve_sn": 1,
+                            "creator_id": 64,
+                            "createtime": "2017-04-26",
+                            "service_id": 4,
+                            "userName": "李康",
+                            "approve_user_name": "李康"
+                        },
+                        {
+                            "approve_id": 477,
+                            "pid": 12,
+                            "approve_type": "03",
+                            "approve_uid": 88,
+                            "approve_sn": 2,
+                            "creator_id": 64,
+                            "createtime": "2017-04-26",
+                            "service_id": 4,
+                            "userName": "朱得超",
+                            "approve_user_name": "朱得超"
+                        }
+                    ],
+                    "parentId": 1,
+                    "parentProjectList": [
+                        {
+                            "pid": 1,
+                            "name": "父项目1",
+                            "top_pid": 100,
+                            "top_name": "顶级项目1"
+                        },
+                        {
+                            "pid": 2,
+                            "name": "父项目2",
+                            "top_pid": 10,
+                            "top_name": "顶级项目2"
+                        }
+                    ],
+                    "subProjectList": [
+                        {
+                            "pid": 1,
+                            "name": "son项目1",
+                            "top_pid": 100,
+                            "top_name": "顶级项目1",
+                            "parentId": 12
+                        },
+                        {
+                            "pid": 3,
+                            "name": "son项目3",
+                            "top_pid": 10,
+                            "top_name": "顶级项目3",
+                            "parentId": 1
+                        }
+                    ],
+                    "qualityAnalysisProjectList": [
+                        {
+                            "name": "质量分析项目1",
+                            "pid": "1"
+                        },
+                        {
+                            "name": "质量分析项目222",
+                            "pid": "222"
+                        }
+                    ],
+                    "projBoardName": "所属一级项目名称",
+                    "projBoardId": "-1"
+                }
+            }
+        },
+        {
+            "url": "/UserService/user/pageQuery",
+            "desc": "获取创建人列表",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": [
+                    {
+                        "uid": 10,
+                        "username": "李琳",
+                        "email": "lilin@migu.cn",
+                        "password": "0cc175b9c0f1b6a831c399e269772661",
+                        "tel": "13911162710",
+                        "enabled": 1,
+                        "require_group_id": 1,
+                        "companyName": "咪咕文化科技有限公司",
+                        "roleid": 2,
+                        "roleName": "项目经理",
+                        "departmentid": 45,
+                        "departName": "TSG-技术管理单元",
+                        "loginflag": true,
+                        "admin": 0,
+                        "username_py": "lilin",
+                        "belong_location": "C",
+                        "locationName": "成都",
+                        "require_dep_name": "咪咕音乐"
+                    },
+                    {
+                        "uid": 11,
+                        "username": "范根林",
+                        "email": "fangenlin@migu.cn",
+                        "password": "0cc175b9c0f1b6a831c399e269772661",
+                        "tel": "13438296889",
+                        "enabled": 1,
+                        "require_group_id": 1,
+                        "companyName": "咪咕文化科技有限公司",
+                        "roleid": 3,
+                        "roleName": "开发工程师",
+                        "departmentid": 45,
+                        "departName": "TSG-技术管理单元",
+                        "loginflag": true,
+                        "admin": 0,
+                        "username_py": "fangenlin",
+                        "belong_location": "C",
+                        "locationName": "成都",
+                        "require_dep_name": "咪咕文化"
+                    },
+                    {
+                        "uid": 12,
+                        "username": "李超",
+                        "email": "lichao_yy@migu.cn",
+                        "password": "0cc175b9c0f1b6a831c399e269772661",
+                        "tel": "18200336766",
+                        "enabled": 1,
+                        "require_group_id": 1,
+                        "companyName": "咪咕文化科技有限公司",
+                        "roleid": 3,
+                        "roleName": "开发工程师",
+                        "departmentid": 45,
+                        "departName": "TSG-技术管理单元",
+                        "loginflag": true,
+                        "admin": 0,
+                        "username_py": "lichao_yy",
+                        "belong_location": "C",
+                        "locationName": "成都",
+                        "require_dep_name": "咪咕互娱"
+                    },
+                    {
+                        "uid": 13,
+                        "username": "郑彬戈",
+                        "email": "zhengbinge@migu.cn",
+                        "password": "0cc175b9c0f1b6a831c399e269772661",
+                        "tel": "13540776406",
+                        "enabled": 1,
+                        "require_group_id": 1,
+                        "companyName": "咪咕文化科技有限公司",
+                        "roleid": 3,
+                        "roleName": "开发工程师",
+                        "departmentid": 45,
+                        "departName": "TSG-技术管理单元",
+                        "loginflag": true,
+                        "admin": 0,
+                        "username_py": "zhengbinge",
+                        "belong_location": "C",
+                        "locationName": "成都",
+                        "require_dep_name": "咪咕动漫"
+                    },
+                    {
+                        "uid": 14,
+                        "username": "樊展飞",
+                        "email": "fanzhanfei@migu.cn",
+                        "password": "0cc175b9c0f1b6a831c399e269772661",
+                        "tel": "15928426912",
+                        "enabled": 1,
+                        "require_group_id": 1,
+                        "companyName": "咪咕文化科技有限公司",
+                        "roleid": 2,
+                        "roleName": "项目经理",
+                        "departmentid": 45,
+                        "departName": "TSG-技术管理单元",
+                        "loginflag": true,
+                        "admin": 0,
+                        "username_py": "fanzhanfei",
+                        "belong_location": "C",
+                        "locationName": "成都",
+                        "require_dep_name": "咪咕动漫"
+                    },
+                    {
+                        "uid": 15,
+                        "username": "张盼富",
+                        "email": "zhangpanfu@migu.cn",
+                        "password": "0cc175b9c0f1b6a831c399e269772661",
+                        "tel": "13408042074",
+                        "enabled": 1,
+                        "require_group_id": 1,
+                        "companyName": "咪咕文化科技有限公司",
+                        "roleid": 3,
+                        "roleName": "开发工程师",
+                        "departmentid": 91,
+                        "departName": "咪咕文化研发事业部(成都)",
+                        "loginflag": true,
+                        "admin": 0,
+                        "username_py": "zhangpanfu",
+                        "belong_location": "C",
+                        "locationName": "成都",
+                        "require_dep_name": "咪咕数媒"
+                    },
+                    {
+                        "uid": 16,
+                        "username": "田伟福",
+                        "email": "tianweifu@migu.cn",
+                        "password": "0cc175b9c0f1b6a831c399e269772661",
+                        "tel": "13880786632",
+                        "enabled": 1,
+                        "require_group_id": 1,
+                        "companyName": "咪咕文化科技有限公司",
+                        "roleid": 3,
+                        "roleName": "开发工程师",
+                        "departmentid": 91,
+                        "departName": "咪咕文化研发事业部(成都)",
+                        "loginflag": true,
+                        "admin": 0,
+                        "username_py": "tianweifu",
+                        "belong_location": "C",
+                        "locationName": "成都",
+                        "require_dep_name": "咪咕视讯"
+                    },
+                    {
+                        "uid": 10,
+                        "username": "李琳",
+                        "email": "lilin@migu.cn",
+                        "password": "0cc175b9c0f1b6a831c399e269772661",
+                        "tel": "13911162710",
+                        "enabled": 1,
+                        "require_group_id": 1,
+                        "companyName": "咪咕文化科技有限公司",
+                        "roleid": 2,
+                        "roleName": "项目经理",
+                        "departmentid": 45,
+                        "departName": "TSG-技术管理单元",
+                        "loginflag": true,
+                        "admin": 0,
+                        "username_py": "lilin",
+                        "belong_location": "C",
+                        "locationName": "成都",
+                        "require_dep_name": "咪咕+"
+                    },
+                    {
+                        "uid": 11,
+                        "username": "范根林",
+                        "email": "fangenlin@migu.cn",
+                        "password": "0cc175b9c0f1b6a831c399e269772661",
+                        "tel": "13438296889",
+                        "enabled": 1,
+                        "require_group_id": 1,
+                        "companyName": "咪咕文化科技有限公司",
+                        "roleid": 3,
+                        "roleName": "开发工程师",
+                        "departmentid": 45,
+                        "departName": "TSG-技术管理单元",
+                        "loginflag": true,
+                        "admin": 0,
+                        "username_py": "fangenlin",
+                        "belong_location": "C",
+                        "locationName": "成都",
+                        "require_dep_name": "TSG"
+                    },
+                    {
+                        "uid": 12,
+                        "username": "李超",
+                        "email": "lichao_yy@migu.cn",
+                        "password": "0cc175b9c0f1b6a831c399e269772661",
+                        "tel": "18200336766",
+                        "enabled": 1,
+                        "require_group_id": 1,
+                        "companyName": "咪咕文化科技有限公司",
+                        "roleid": 3,
+                        "roleName": "开发工程师",
+                        "departmentid": 45,
+                        "departName": "TSG-技术管理单元",
+                        "loginflag": true,
+                        "admin": 0,
+                        "username_py": "lichao_yy",
+                        "belong_location": "C",
+                        "locationName": "成都",
+                        "require_dep_name": "BSG"
+                    },
+                    {
+                        "uid": 13,
+                        "username": "郑彬戈",
+                        "email": "zhengbinge@migu.cn",
+                        "password": "0cc175b9c0f1b6a831c399e269772661",
+                        "tel": "13540776406",
+                        "enabled": 1,
+                        "require_group_id": 1,
+                        "companyName": "咪咕文化科技有限公司",
+                        "roleid": 3,
+                        "roleName": "开发工程师",
+                        "departmentid": 45,
+                        "departName": "TSG-技术管理单元",
+                        "loginflag": true,
+                        "admin": 0,
+                        "username_py": "zhengbinge",
+                        "belong_location": "C",
+                        "locationName": "成都",
+                        "require_dep_name": "ISG"
+                    },
+                    {
+                        "uid": 14,
+                        "username": "樊展飞",
+                        "email": "fanzhanfei@migu.cn",
+                        "password": "0cc175b9c0f1b6a831c399e269772661",
+                        "tel": "15928426912",
+                        "enabled": 1,
+                        "require_group_id": 1,
+                        "companyName": "咪咕文化科技有限公司",
+                        "roleid": 2,
+                        "roleName": "项目经理",
+                        "departmentid": 45,
+                        "departName": "TSG-技术管理单元",
+                        "loginflag": true,
+                        "admin": 0,
+                        "username_py": "fanzhanfei",
+                        "belong_location": "C",
+                        "locationName": "成都",
+                        "require_dep_name": "咪咕文化科技有限公司"
+                    },
+                    {
+                        "uid": 15,
+                        "username": "张盼富",
+                        "email": "zhangpanfu@migu.cn",
+                        "password": "0cc175b9c0f1b6a831c399e269772661",
+                        "tel": "13408042074",
+                        "enabled": 1,
+                        "require_group_id": 1,
+                        "companyName": "咪咕文化科技有限公司",
+                        "roleid": 3,
+                        "roleName": "开发工程师",
+                        "departmentid": 91,
+                        "departName": "咪咕文化研发事业部(成都)",
+                        "loginflag": true,
+                        "admin": 0,
+                        "username_py": "zhangpanfu",
+                        "belong_location": "C",
+                        "locationName": "成都",
+                        "require_dep_name": "TSG"
+                    },
+                    {
+                        "uid": 16,
+                        "username": "田伟福",
+                        "email": "tianweifu@migu.cn",
+                        "password": "0cc175b9c0f1b6a831c399e269772661",
+                        "tel": "13880786632",
+                        "enabled": 1,
+                        "require_group_id": 1,
+                        "companyName": "咪咕文化科技有限公司",
+                        "roleid": 3,
+                        "roleName": "开发工程师",
+                        "departmentid": 91,
+                        "departName": "咪咕文化研发事业部(成都)",
+                        "loginflag": true,
+                        "admin": 0,
+                        "username_py": "tianweifu",
+                        "belong_location": "C",
+                        "locationName": "成都",
+                        "require_dep_name": "XXXX"
+                    }
+                ],
+                "basePage": {
+                    "pageNo": 1,
+                    "pageSize": 10,
+                    "pages": 253,
+                    "rowSrt": 0,
+                    "rowEnd": 9,
+                    "counts": 2522
+                }
+            }
+        },
+        {
+            "url": "/UserService/project/queryprojectversionlist",
+            "desc": "获取版本号",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "versions": [
+                    {
+                        "projectId": 12,
+                        "projectVersion": "v1.1.0",
+                        "projectVersionId": 3
+                    },
+                    {
+                        "projectId": 12,
+                        "projectVersion": "v1.1.1",
+                        "projectVersionId": 4
+                    },
+                    {
+                        "projectId": 12,
+                        "projectVersion": "v1.1.2",
+                        "projectVersionId": 5
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/UserService/user/queryuserlist",
+            "desc": "查询用户",
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "users": [
+                    {
+                        "userId": "11",
+                        "userName": "张三",
+                        "userCompany": "@cword(4)",
+                        "companyName": "咪咕动漫有限公司",
+                        "departmentName": "TSG-平台能力单元",
+                        "userDepartment": "@cword(4)",
+                        "userMail": "@email()"
+                    },
+                    {
+                        "userId": "12",
+                        "userName": "李四",
+                        "userCompany": "@cword(4)",
+                        "companyName": "咪咕有限公司",
+                        "userDepartment": "@cword(4)",
+                        "userMail": "@email()"
+                    },
+                    {
+                        "userId": "13",
+                        "userName": "王五",
+                        "userCompany": "@cword(4)",
+                        "companyName": "咪咕有限公司",
+                        "userMail": "@email()"
+                    },
+                    {
+                        "userId": "14",
+                        "userName": "王五2",
+                        "userCompany": "@cword(4)",
+                        "userMail": "@email()"
+                    },
+                    {
+                        "userId": "15",
+                        "userName": "王五3",
+                        "userCompany": "@cword(4)",
+                        "userMail": "@email()"
+                    },
+                    {
+                        "userId": "16",
+                        "userName": "王五4",
+                        "userCompany": "@cword(4)",
+                        "userMail": "@email()"
+                    },
+                    {
+                        "userId": "17",
+                        "userName": "王五5",
+                        "userCompany": "@cword(4)",
+                        "userMail": "@email()"
+                    },
+                    {
+                        "userId": "18",
+                        "userName": "王五6",
+                        "userCompany": "@cword(4)",
+                        "userMail": "@email()"
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/UserService/user/queryuserlistbyname",
+            "desc": "获取在线人员搜素",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "成功",
+                "result": {
+                    "sign_cc_user_list": [
+                        {
+                            "sign_cc_user_id": 1,
+                            "sign_cc_user_name": "沈安恒知会人"
+                        },
+                        {
+                            "sign_cc_user_id": 2,
+                            "sign_cc_user_name": "达康书记知会人"
+                        },
+                        {
+                            "sign_cc_user_id": 3,
+                            "sign_cc_user_name": "邓英锋知会人"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "url": "/UserService/project/queryProjectTreeList",
+            "desc": "查询项目树",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": "查询项目树目录成功咯",
+                "result": [
+                    {
+                        "name": "jiangjiqi",
+                        "pid": "1234",
+                        "quality_analysis_flag": 1,
+                        "projectdetail": "这是姜姜姜介绍",
+                        "alias_name": "英文代号",
+                        "project_type": 1,
+                        "proj_board_id": -1,
+                        "leaf_node": false,
+                        "children": [
+                            {
+                                "name": "jiangjiqi",
+                                "pid": "1234",
+                                "quality_analysis_flag": 0,
+                                "projectdetail": "这是项目介绍",
+                                "alias_name": "这是代号",
+                                "project_type": 1,
+                                "proj_board_id": null,
+                                "leaf_node": false,
+                                "children": [
+                                    {
+                                        "name": "FlareVis",
+                                        "pid": "1234",
+                                        "quality_analysis_flag": 0,
+                                        "projectdetail": "这是介绍",
+                                        "alias_name": "这是代号",
+                                        "project_type": 1,
+                                        "proj_board_id": 1,
+                                        "children": [],
+                                        "leaf_node": true
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "scale",
+                                "pid": "1234",
+                                "quality_analysis_flag": 1,
+                                "projectdetail": "这是介绍",
+                                "alias_name": "这是代号",
+                                "project_type": 1,
+                                "proj_board_id": -1,
+                                "leaf_node": false,
+                                "children": [
+                                    {
+                                        "name": "IScaleMap",
+                                        "pid": "1234",
+                                        "quality_analysis_flag": 1,
+                                        "projectdetail": "这是介绍",
+                                        "alias_name": "这是代号",
+                                        "project_type": 1,
+                                        "proj_board_id": 1,
+                                        "children": [],
+                                        "leaf_node": true
+                                    },
+                                    {
+                                        "name": "LinearScale",
+                                        "pid": "1234",
+                                        "quality_analysis_flag": null,
+                                        "projectdetail": "这是介绍",
+                                        "alias_name": "这是代号",
+                                        "project_type": 1,
+                                        "proj_board_id": -1,
+                                        "children": [],
+                                        "leaf_node": true
+                                    },
+                                    {
+                                        "name": "LogScale",
+                                        "pid": "1234",
+                                        "quality_analysis_flag": 1,
+                                        "projectdetail": "这是介绍",
+                                        "alias_name": "这是代号",
+                                        "project_type": 1,
+                                        "proj_board_id": 1,
+                                        "children": [],
+                                        "leaf_node": true
+                                    },
+                                    {
+                                        "name": "OrdinalScale",
+                                        "pid": "1234",
+                                        "quality_analysis_flag": 1,
+                                        "projectdetail": "这是介绍",
+                                        "alias_name": "这是代号",
+                                        "project_type": 1,
+                                        "proj_board_id": -1,
+                                        "children": [],
+                                        "leaf_node": true
+                                    },
+                                    {
+                                        "name": "QuantileScale",
+                                        "pid": "1234",
+                                        "quality_analysis_flag": 0,
+                                        "projectdetail": "这是介绍",
+                                        "alias_name": "这是代号",
+                                        "project_type": 1,
+                                        "proj_board_id": 1,
+                                        "children": [],
+                                        "leaf_node": true
+                                    },
+                                    {
+                                        "name": "QuantitativeScale",
+                                        "pid": "1234",
+                                        "quality_analysis_flag": 1,
+                                        "projectdetail": "这是介绍",
+                                        "alias_name": "这是代号",
+                                        "project_type": 1,
+                                        "proj_board_id": -1,
+                                        "children": [],
+                                        "leaf_node": true
+                                    },
+                                    {
+                                        "name": "RootScale",
+                                        "pid": "1234",
+                                        "quality_analysis_flag": 1,
+                                        "projectdetail": "这是介绍",
+                                        "alias_name": "这是代号",
+                                        "project_type": 1,
+                                        "proj_board_id": -1,
+                                        "children": [],
+                                        "leaf_node": true
+                                    },
+                                    {
+                                        "name": "Scale",
+                                        "pid": "1234",
+                                        "quality_analysis_flag": 0,
+                                        "projectdetail": "这是介绍",
+                                        "alias_name": "这是代号",
+                                        "project_type": 1,
+                                        "proj_board_id": -1,
+                                        "children": [],
+                                        "leaf_node": true
+                                    },
+                                    {
+                                        "name": "ScaleType",
+                                        "pid": "1234",
+                                        "quality_analysis_flag": 1,
+                                        "projectdetail": "这是介绍",
+                                        "alias_name": "这是代号",
+                                        "project_type": 1,
+                                        "proj_board_id": -1,
+                                        "children": [],
+                                        "leaf_node": true
+                                    },
+                                    {
+                                        "name": "TimeScale",
+                                        "pid": "1234",
+                                        "quality_analysis_flag": 1,
+                                        "projectdetail": "这是介绍",
+                                        "alias_name": "这是代号",
+                                        "project_type": 1,
+                                        "proj_board_id": -1,
+                                        "children": [],
+                                        "leaf_node": true
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "display",
+                                "pid": "1234",
+                                "quality_analysis_flag": 1,
+                                "projectdetail": "这是介绍",
+                                "alias_name": "这是代号",
+                                "project_type": 1,
+                                "proj_board_id": -1,
+                                "leaf_node": false,
+                                "children": [
+                                    {
+                                        "name": "DirtySprite",
+                                        "pid": "1234",
+                                        "quality_analysis_flag": 0,
+                                        "projectdetail": "这是介绍",
+                                        "alias_name": "这是代号",
+                                        "project_type": 1,
+                                        "proj_board_id": -1,
+                                        "children": [],
+                                        "leaf_node": true
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/UserService/dictionary/queryViewDictionary",
+            "des": "系统字典查询",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "result": {
+                    "input_type": [
+                        {
+                            "label": "flow_manage_id",
+                            "value": "10"
+                        },
+                        {
+                            "label": "bizform_id",
+                            "value": "20"
+                        },
+                        {
+                            "label": "bizfield_group_id",
+                            "value": "30"
+                        },
+                        {
+                            "label": "group_number",
+                            "value": "40"
+                        }
+                    ],
+                    "option_type": [
+                        {
+                            "label": "flow_manage_id",
+                            "value": "10"
+                        },
+                        {
+                            "label": "bizform_id",
+                            "value": "20"
+                        },
+                        {
+                            "label": "bizfield_group_id",
+                            "value": "30"
+                        },
+                        {
+                            "label": "group_number",
+                            "value": "40"
+                        }
+                    ],
+                    "gitlab_flow_manage": [
+                        {
+                            "label": "flow_manage_id",
+                            "value": "10"
+                        },
+                        {
+                            "label": "bizform_id",
+                            "value": "20"
+                        },
+                        {
+                            "label": "bizfield_group_id",
+                            "value": "30"
+                        },
+                        {
+                            "label": "group_number",
+                            "value": "40"
+                        }
+                    ],
+                    "gitlab_access_level": [
+                        {
+                            "label": "无权限",
+                            "value": "0"
+                        },
+                        {
+                            "label": "GUEST",
+                            "value": "10"
+                        },
+                        {
+                            "label": "REPORTER",
+                            "value": "20"
+                        },
+                        {
+                            "label": "DEVELOPER",
+                            "value": "30"
+                        },
+                        {
+                            "label": "MASTER",
+                            "value": "40"
+                        },
+                        {
+                            "label": "OWNER",
+                            "value": "50"
+                        }
+                    ],
+                    "event": [
+                        {
+                            "value": "101",
+                            "label": "新建"
+                        },
+                        {
+                            "value": "102",
+                            "label": "编辑"
+                        },
+                        {
+                            "value": "103",
+                            "label": "通过"
+                        },
+                        {
+                            "value": "104",
+                            "label": "处理成功"
+                        },
+                        {
+                            "value": "105",
+                            "label": "处理失败"
+                        },
+                        {
+                            "value": "106",
+                            "label": "拒绝"
+                        },
+                        {
+                            "value": "107",
+                            "label": "取消"
+                        },
+                        {
+                            "value": "108",
+                            "label": "重新提交"
+                        }
+                    ],
+                    "status": [
+                        {
+                            "value": "01",
+                            "label": "审核中"
+                        },
+                        {
+                            "value": "02",
+                            "label": "处理中"
+                        },
+                        {
+                            "value": "03",
+                            "label": "已成功"
+                        },
+                        {
+                            "value": "04",
+                            "label": "已失败"
+                        },
+                        {
+                            "value": "05",
+                            "label": "已拒绝"
+                        },
+                        {
+                            "value": "06",
+                            "label": "已取消"
+                        }
+                    ],
+                    "flow_state": [
+                        {
+                            "label": "未启用",
+                            "value": "01"
+                        },
+                        {
+                            "label": "启用",
+                            "value": "02"
+                        },
+                        {
+                            "label": "禁用",
+                            "value": "03"
+                        }
+                    ],
+                    "require_level": [
+                        {
+                            "label": "高",
+                            "value": "01"
+                        },
+                        {
+                            "label": "中",
+                            "value": "02"
+                        },
+                        {
+                            "label": "低",
+                            "value": "03"
+                        }
+                    ],
+                    "feedback_document_id": [
+                        {
+                            "label": "用户体验报告",
+                            "value": "5069"
+                        }
+                    ],
+                    "require_status": [
+                        {
+                            "value": "01",
+                            "label": "未规划"
+                        },
+                        {
+                            "value": "02",
+                            "label": "实现中"
+                        },
+                        {
+                            "value": "03",
+                            "label": "已实现"
+                        },
+                        {
+                            "value": "04",
+                            "label": "已取消"
+                        }
+                    ],
+                    "help_document_id": [
+                        {
+                            "label": "使用手册",
+                            "value": "5611"
+                        }
+                    ],
+                    "supervision_grades": [
+                        {
+                            "label": "一级",
+                            "value": "1"
+                        },
+                        {
+                            "label": "二级",
+                            "value": "2"
+                        },
+                        {
+                            "label": "三级",
+                            "value": "3"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "url": "/UserService/project/queryAllProjectLeader",
+            "desc": "查询所有项目负责人列表",
+            "mock": true,
+            "res": {
+                "code": 200,
+                "remark": [],
+                "result": [
+                    {
+                        "user_id": 21,
+                        "user_name": "达特",
+                        "nick_name": "达达"
+                    },
+                    {
+                        "user_id": 22,
+                        "user_name": "发",
+                        "nick_name": "发哥"
+                    },
+                    {
+                        "user_id": 23,
+                        "user_name": "德华",
+                        "nick_name": "华华"
+                    },
+                    {
+                        "user_id": 24,
+                        "user_name": "学友",
+                        "nick_name": "歌手"
+                    },
+                    {
+                        "user_id": 25,
+                        "user_name": "润发",
+                        "nick_name": "啊发"
+                    },
+                    {
+                        "user_id": 26,
+                        "user_name": "妹大爷",
+                        "nick_name": ""
+                    }
+                ]
+            }
+        }
+    ]
+}

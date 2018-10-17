@@ -1,0 +1,257 @@
+// qqli
+// 2018-05-08 拆分
+// 全局table（所有模块）
+@import '../core/common.less';
+.el-table {
+    .el-table__empty-block {
+        width: 100% !important; // 当表格没有数据时，让空白图标居中hj9/27
+        min-height: 300px;
+    }
+    .td-fixed {
+        background: #fff;
+        border-right: 1px solid rgba(236, 237, 238, 0);
+        box-shadow: 0px 5px 15px rgba(211, 212, 214, 0);
+        &.td-fixed-style {
+            position: relative;
+            border-right: 1px solid rgba(236, 237, 238, 1);
+            box-shadow: 0px 5px 7px rgba(211, 212, 214, 1);
+            z-index: 10;
+        }
+    }
+    .td-fixed.is-leaf {
+        background: rgb(245, 247, 250);
+        border-right: 0px solid rgba(236, 237, 238, 0);
+        >div.cell {
+            line-height: 46px;
+        }
+        &.td-fixed-style {
+            position: relative;
+            border-right: 0px solid rgba(236, 237, 238, 1);
+            box-shadow: 0px 5px 7px rgba(211, 212, 214, 1);
+            z-index: 10;
+        }
+    }
+    .el-table__empty-text {
+        padding-top: 120px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 250px;
+        color: #424e65;
+        font-size: 12px;
+        text-align: center;
+        background-size: 120px;
+        background-repeat: no-repeat;
+        background-position: center 0;
+        background-image: url(../../images/search-result-empty.png);
+    }
+    .td-first {
+        .cell {
+            padding-left: 20px;
+        }
+    }
+    .td-title {
+        [class^='icon-'] {
+            margin-right: 6px;
+            line-height: 24px;
+            .fs16;
+        }
+        .cell {
+            //display: box; /* OLD - Android 4.4- */
+            display: -webkit-box;
+            /* OLD - iOS 6-, Safari 3.1-6 */
+            display: -moz-box;
+            /* OLD - Firefox 19- (buggy but mostly works) */
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            overflow: visible;
+        }
+        .title {
+            -webkit-flex: 1;
+            /* Chrome */
+            -ms-flex: 1;
+            /* IE 10 */
+            flex: 1;
+            /* NEW, Spec - Opera 12.1, Firefox 20+ */
+            -webkit-box-flex: 1;
+            /* OLD - iOS 6-, Safari 3.1-6 */
+            -moz-box-flex: 1;
+            /* OLD - Firefox 19- */
+            margin-right: 20px;
+            display: inline-block;
+            word-break: keep-all;
+            color: @text-color12;
+            .text-ellipsis;
+            vertical-align: middle;
+            line-height: 46px;
+            width: 1px; // 设置width，兼容Safari
+        }
+        .title-exist {
+            -webkit-flex: 1;
+            /* Chrome */
+            -ms-flex: 1;
+            /* IE 10 */
+            flex: 1;
+            /* NEW, Spec - Opera 12.1, Firefox 20+ */
+            -webkit-box-flex: 1;
+            /* OLD - iOS 6-, Safari 3.1-6 */
+            -moz-box-flex: 1;
+            /* OLD - Firefox 19- */
+            margin-right: 20px;
+            display: inline-block;
+            word-break: keep-all;
+            .text-ellipsis;
+            vertical-align: middle;
+            line-height: 46px;
+        }
+        &:hover {
+            color: @text-color12; //opacity: @opacity;
+            .title {
+                color: @text-color12; // text-decoration: underline;
+            }
+            .title-exist {
+                color: #757a86;
+            }
+        }
+        .dropdown-menu {
+            display: none;
+        }
+    }
+    .td-ellipsis {
+        span {
+            word-break: keep-all;
+            .text-ellipsis;
+        }
+    }
+    tr {
+        .icon-edit {
+            display: none;
+        }
+        .edit-enable {
+            visibility: hidden;
+        }
+        &:hover,
+        &.show-operate {
+            // background-color: #edf5ff;
+            // border-bottom-color: #e1edfb;
+            // .td-fixed{
+            // background-color: #edf5ff;
+            // border-bottom-color: #E1EDFB;
+            // }
+            td {
+                background-color: #edf5ff;
+                border-bottom-color: #e1edfb;
+            }
+            .operate-box {
+                zoom: 1;
+                display: inline-block;
+                position: relative;
+                visibility: visible;
+                opacity: 1;
+                z-index: 1;
+                width: auto;
+                transition: width opacity 10ms ease;
+                transition-delay: 300ms;
+                pointer-events: auto;
+            }
+            .el-dropdown {
+                visibility: visible;
+            }
+            .edit-enable {
+                visibility: visible;
+                display: inline-block;
+            }
+        }
+    }
+    [class^='icon-'] {
+        cursor: pointer;
+        color: @primary-color;
+        .fs16;
+        vertical-align: middle;
+    }
+    .icon-ok,
+    .icon-no {
+        .fs18;
+    }
+    .operate-box {
+        line-height: 46px;
+        height: 46px;
+        display: inline-block;
+        width: 0;
+        overflow: hidden;
+        position: relative;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0s;
+        transition-delay: 0ms;
+    }
+    .operate-state {
+        margin-right: 10px;
+        .operate {
+            color: @primary-color; // color: @text-color12;
+            cursor: pointer;
+            i {
+                font-style: normal;
+                padding: 0 5px;
+                color: @text-color3;
+            }
+            &:last-child {
+                i {
+                    display: none;
+                }
+            }
+            &.reject {
+                color: @text-color13;
+            }
+            &.process {
+                color: @text-color14;
+            }
+            &.noUpdate {
+                color: @text-color17;
+            }
+        }
+    }
+}
+
+// @qqli 外部边框，项目设置 - 资源权限管理使用
+.outer-border {
+    border: 1px solid #dfe6ec;
+    border-bottom: 0;
+    .el-table__empty-block {
+        border-width: 0 0 1px 0;
+        border-style: solid;
+        border-color: #ecedee;
+    }
+}
+
+.table-empty-no-image {
+    .el-table__empty-text {
+        padding-top: 0;
+        background-image: none;
+    }
+}
+
+.table-small {
+    .el-table__empty-block {
+        min-height: 88px;
+    }
+}
+
+// table end 待优化
+.el-table__empty-text {
+    padding-top: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250px;
+    color: #424e65;
+    font-size: 12px;
+    text-align: center;
+    background-size: 150px 141px;
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-image: url(../../images/search-result-empty.png);
+    -webkit-transform: translate(-50%, -50%);
+}

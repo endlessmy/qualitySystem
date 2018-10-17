@@ -1,0 +1,261 @@
+@pd: 60px;
+@pd2: 25px;
+@primaryColor: #f6a02b;
+@footerHeight: 80px;
+.login-container {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    .login-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        height: 70px;
+        background-color: #fff;
+        box-shadow: 0px 1px 0px 0px #e6e7e8, 0 1px 0 0 #ebeff9;
+        .logo {
+            display: block;
+            width: 320px;
+            height: 70px;
+            padding-top: 13px;
+            padding-left: 12.5%;
+            img {
+                height: 42px;
+                width: 174px;
+            }
+        }
+    }
+    .login-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: @footerHeight;
+        line-height: @footerHeight;
+        font-size: 12px;
+        color: #757a86;
+        text-align: center;
+        background: #fff;
+    }
+}
+
+.login-body {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: @footerHeight;
+    background: #f3f8fb;
+    z-index: 9;
+    .body-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient( 226deg, rgba(133, 220, 219, 0.26) 0%, rgba(245, 243, 223, 0.96) 49%, rgba(248, 236, 209, 1) 100%);
+        opacity: 0.6;
+    }
+    .banner-tiny {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 242px;
+        height: 220px;
+        background: url(../images/login/theme_tiny.png) no-repeat right 0;
+        background-size: contain;
+    }
+    .login-box {
+        position: relative;
+        margin: 0 auto;
+        height: 100%;
+        .banner {
+            float: left;
+            background: url(../images/login/theme.png) no-repeat 50% 50%;
+            background-size: 100%;
+        }
+    }
+    .form-wrap {
+        float: left;
+        width: 350px;
+        box-sizing: border-box;
+        border-radius: 2px;
+        background: #fff;
+        padding-left: 30px;
+        padding-right: 30px;
+        box-shadow: 0px 2px 18px 0px rgba(88, 126, 132, 0.06);
+    }
+    .nav {
+        margin-top: 20px;
+        margin-bottom: 6px;
+        h3 {
+            float: left;
+            font-size: 18px;
+            margin-top: 1px;
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+        .tip {
+            float: right;
+            width: 77px;
+            height: 28px;
+            line-height: 28px;
+            padding-left: 12px;
+            color: @primaryColor;
+            background: url('../images/login/arrow.png') no-repeat 50% 50%;
+            background-size: 100% 100%;
+            margin-right: 6px;
+        }
+        .icon {
+            float: right;
+            width: 40px;
+            height: 44px;
+            cursor: pointer;
+        }
+        .icon-captcha {
+            background: url('../images/captcha@2x.png') no-repeat 50% 50%;
+            background-size: 100% 100%;
+        }
+        .icon-password {
+            background: url('../images/icon_password@2x.png') no-repeat 50% 50%;
+            background-size: 100% 100%;
+        }
+    }
+    .info {
+        padding-bottom: 20px;
+        color: #666;
+        font-size: 14px;
+    }
+    .input-item {
+        color: #666;
+        padding-bottom: 20px;
+        position: relative;
+        &.pb0 {
+            padding-bottom: 0;
+        }
+        h3 {
+            padding-bottom: 10px;
+            line-height: 1;
+            font-weight: normal;
+        }
+        input {
+            width: 290px;
+            height: 40px;
+            background: #ffffff;
+            border: 1px solid #d8e3d8;
+            border-radius: 2px;
+            padding: 0 10px;
+            box-sizing: border-box;
+            font-size: 12px;
+        }
+        input:focus {
+            outline: none;
+            border: 1px solid @primaryColor;
+        }
+        .input-error {
+            border: 1px solid #b33938;
+        }
+        .input-error:focus {
+            border: 1px solid #b33938;
+            outline: none;
+        }
+        .btn-code {
+            position: absolute;
+            top: 10px;
+            right: 8px;
+            color: @primaryColor;
+            font-size: 12px;
+            &.sending {
+                color: #999;
+            }
+        }
+    }
+    .phone-error {
+        margin: -20px 0 0 0;
+    }
+    .sended-tip {
+        color: #999;
+        padding-top: 10px;
+        font-size: 12px;
+    }
+    .deliver {
+        height: 2px;
+        background: #e6e9f0;
+        position: relative;
+        bottom: 2px;
+        z-index: -1;
+    }
+    .error-wrap {
+        height: 20px;
+    }
+    .form-error-tip,
+    .capital {
+        color: #b33938;
+        text-align: left;
+        height: 20px;
+        line-height: 20px;
+        font-size: 12px;
+    }
+    .capital {
+        color: @primaryColor;
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+    .forget-text {
+        padding-bottom: 10px;
+        line-height: 1;
+        font-size: 12px;
+        a {
+            float: right;
+            color: #999;
+            &:hover {
+                color: @primaryColor;
+            }
+        }
+    }
+    .line {
+        width: 100%;
+        height: 1px;
+        background: #ededed;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .tip {
+        padding-bottom: 20px;
+        line-height: 1;
+        font-size: 12px;
+        color: #999;
+        p {
+            margin-top: 10px;
+        }
+    }
+    .btn-submit {
+        width: 290px;
+        height: 40px;
+        outline: none;
+        border: 0;
+        background: @primaryColor;
+        border-radius: 2px;
+        color: #fff;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+}
+
+// .btn {
+//     display: block;
+//     width: 326px;
+//     height: 44px;
+//     line-height: 44px;
+//     background: #539eff;
+//     border-radius: 2px;
+//     cursor: pointer;
+//     color: #fff;
+//     text-align: center;
+// }

@@ -1,0 +1,31 @@
+// qqli
+// 2018-05-08 拆分
+// 面包屑导航：新建|详情|编辑顶部，列表页表格上面
+@import '../core/common.less';
+.breadcrumbs {
+    .fs12;
+    span {
+        display: inline-block;
+    }
+    .new-project {
+        font-size: 14px;
+        border-left: 2px solid #539eff;
+        padding-left: 10px;
+        line-height: 14px;
+    }
+    i {
+        color: #151515;
+        font-style: normal;
+        padding: 0 6px;
+    }
+    .first-crumb {
+        color: #666;
+    }
+    .second-crumb,
+    .crumb-item {
+        color: #151515;
+        &.active {
+            color: #539eff;
+        }
+    }
+}

@@ -1,0 +1,602 @@
+@import '../../../../common/layouts/css/index.less';
+@import '../../../../node_modules/element-ui/lib/theme-default/index.css';
+body {
+    // overflow-x: auto !important;
+    // min-width: 1366px; //修复首页缩小时没有横向滚动条导致页面显示不全的缺陷
+}
+
+.container {
+    overflow: auto !important;
+}
+
+.el-tabs__header {
+    border-bottom: 2px solid #d1dbe5;
+    padding-top: 30px;
+    position: relative;
+    margin: 0 0 15px;
+}
+
+.el-tabs__active-bar {
+    height: 2px;
+}
+
+.first-line-shadow {
+    box-shadow: 0 0px 9px 0px #e6e7e8;
+    position: relative;
+    z-index: 1;
+}
+
+.add {
+    background: #999;
+    text-align: center;
+}
+
+.add .icon-add {
+    font-size: 12px !important;
+    color: #333 !important;
+    margin: 0 !important;
+    line-height: 36px;
+}
+
+.color999 {
+    color: #999;
+}
+
+.color666 {
+    color: #666;
+}
+
+.color333 {
+    color: #333;
+}
+
+/*首页我的项目 added by zhangxuefei*/
+
+.home-wrap {
+    width: 1366px;
+    margin: 0 auto;
+    padding: 20px;
+    .crisis-bc {
+        background-color: #f36b5d;
+    }
+    .apply-tools-bc {
+        background-color: #29ab91;
+    }
+    .task-bc {
+        background-color: #f39725;
+    }
+    .require-bc {
+        background-color: #539eff;
+    }
+    .vertical-line {
+        border-left: 3px solid #539eff;
+        padding-left: 10px;
+        display: inline-block;
+        height: 14px;
+        line-height: 16px;
+        color: #333;
+        vertical-align: middle;
+    }
+    .title-wrap {
+        height: 44px;
+        line-height: 14px;
+        padding: 14px 20px;
+        background-color: #f9f9f9;
+        color: #999999;
+    }
+    .project-list {
+        float: left;
+        width: 1006px;
+        background-color: #fff;
+        min-height: 268px;
+        .title-wrap {
+            .search-wrap {
+                position: relative;
+                top: -7px;
+                input::-webkit-input-placeholder {
+                    font-size: 12px;
+                }
+                input:-ms-input-placeholder {
+                    font-size: 12px;
+                }
+                input:-moz-placeholder {
+                    font-size: 12px;
+                }
+                input::-moz-placeholder {
+                    font-size: 12px;
+                }
+                .search-position {
+                    position: absolute;
+                    right: 235px;
+                    z-index: 100;
+                }
+                .del-position {
+                    position: absolute;
+                    right: 5px;
+                    line-height: 30px;
+                    z-index: 100;
+                    color: #999; // color: #fff;
+                    // &:hover {
+                    //     color: #999999;
+                    // }
+                }
+                .search-title {
+                    padding-left: 5px;
+                    line-height: 30px;
+                    cursor: pointer;
+                }
+                .search-input {
+                    width: 260px;
+                    height: 30px;
+                    font-size: 12px;
+                }
+                .search-button {
+                    width: 10px;
+                    cursor: pointer;
+                }
+            }
+            .el-input__inner {
+                padding-left: 30px;
+                padding-right: 20px;
+                height: 30px;
+            }
+        }
+        .project-list-content {
+            padding: 5px 0px 10px 20px;
+            .item {
+                margin-top: 20px;
+                float: left;
+                border-radius: 3px;
+                margin-right: 19px;
+                width: 309px;
+                height: 60px;
+                background-color: #f5f5f6;
+                position: relative;
+                cursor: pointer;
+                &:hover {
+                    background-color: #f5f5f5;
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+                .inner-div {
+                    width: 100%;
+                    height: 100%;
+                    padding: 12px 10px;
+                    &:hover {
+                        & + .fenzhi {
+                            opacity: 1;
+                            visibility: visible;
+                            transition: opacity 200ms ease;
+                            transition-delay: 200ms;
+                        }
+                    }
+                    .logo {
+                        color: #fff;
+                        text-align: center;
+                        margin: 0 auto;
+                        padding: 0;
+                        font-size: 16px;
+                        width: 36px;
+                        height: 36px;
+                        border-radius: 36px;
+                        line-height: 36px;
+                        display: inline-block;
+                        background-color: #539eff;
+                        position: absolute;
+                        &.operationredsea {
+                            background: url('../../layouts/images/logo-operation.png') no-repeat center;
+                            background-size: 70%;
+                            background-color: transparent !important;
+                            width: 60px !important;
+                        }
+                    }
+                    .name {
+                        position: absolute;
+                        left: 55px;
+                        top: 10px;
+                        width: 230px;
+                        color: #333;
+                        text-align: left;
+                        &.operationredsea {
+                            left: 70px !important;
+                        }
+                        .title {
+                            display: inline-block;
+                            vertical-align: middle;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            max-width: 230px;
+                            color: #333;
+                            padding-right: 10px;
+                        }
+                        .title-small {
+                            max-width: 190px;
+                        }
+                        .title-icon {
+                            .fs12;
+                            display: inline-block;
+                            .icon-yiji {
+                                color: #ef7373;
+                            }
+                            .icon-zhiliang {
+                                color: #539eff;
+                            }
+                        }
+                    }
+                    .alias-none {
+                        top: 20px !important;
+                    }
+                    .alias-name {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        width: 200px;
+                        position: absolute;
+                        left: 55px;
+                        bottom: 10px;
+                        font-size: 12px;
+                    }
+                    .color999 {
+                        color: #999;
+                    }
+                    .desc {
+                        .fs12;
+                        color: #878c96;
+                        line-height: 21px;
+                        max-height: 63px;
+                        overflow: hidden;
+                    }
+                }
+                .fenzhi {
+                    position: absolute;
+                    right: 10px;
+                    top: 15px;
+                    color: #666;
+                    padding: 6px;
+                    cursor: pointer;
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: opacity 0s;
+                    transition-delay: 0ms;
+                    &:hover {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+            .create-project {
+                border: 1px dashed #c7c7c7;
+                background-color: #fff;
+                height: 50px;
+                padding-top: 5px;
+                text-align: center;
+                margin-top: 25px;
+                > a {
+                    display: block;
+                }
+                .add-name {
+                    color: #333;
+                    text-align: center;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    line-height: 36px;
+                }
+                .add {
+                    background-color: #fff;
+                    color: #333;
+                }
+                &:hover {
+                    .add {
+                        background: #f5f5f6;
+                    }
+                }
+            }
+            .home-more {
+                float: right;
+                color: @primary-color;
+                .fs14;
+            }
+        }
+        .view-more-project {
+            margin-top: 14px;
+            font-size: 12px;
+            line-height: 18px;
+            height: 18px;
+            .icon {
+                transform: rotateZ(90deg);
+                display: inline-block;
+                margin-left: 4px;
+            }
+            .up {
+                transform: rotateZ(270deg);
+            }
+        }
+    }
+    .app-list,
+    .app-list-spread {
+        height: 234px;
+        width: 1326px;
+        padding-bottom: 20px;
+        background-color: #fff;
+        .item {
+            float: left;
+            text-align: center;
+            > a {
+                display: block;
+                text-align: center;
+                &:hover {
+                    background-color: #f5f5f5;
+                }
+            }
+            .prj-icon {
+                color: #fff;
+                display: inline-block;
+                text-align: center;
+                line-height: 40px;
+                border-radius: 2px;
+            }
+            .text {
+                font-size: 12px;
+                color: #757a86;
+            }
+        }
+        .app-empty {
+            margin-top: 46px;
+            text-align: center;
+            .icon-yingyong {
+                font-size: 20px;
+            }
+            h4 {
+                font-weight: normal;
+                line-height: 34px;
+            }
+            p {
+                line-height: 24px;
+            }
+        }
+    }
+    .app-list {
+        float: right;
+        width: 300px;
+        height: 268px;
+        padding-bottom: 17px;
+        background-color: #fff;
+        ul {
+            width: 100%;
+            padding: 0 20px 20px 10px;
+        }
+        .item {
+            width: 80px;
+            height: auto;
+            margin: 20px 0 0 10px;
+            > a {
+                padding: 12px 0 8px;
+            }
+            .prj-icon {
+                width: 36px;
+                height: 36px;
+            }
+            .text {
+                line-height: 14px;
+                margin-top: 10px;
+            }
+        }
+    }
+    .app-list-spread {
+        .item {
+            width: 150px;
+            height: 150px;
+            margin-top: 20px;
+            margin-left: 20px;
+            border: 1px solid #eceff9;
+            border-radius: 2px;
+            > a {
+                padding: 40px 8px 32px 8px;
+            }
+            .prj-icon {
+                width: 40px;
+                height: 40px;
+            }
+            .text {
+                margin-top: 18px;
+            }
+        }
+        .app-empty {
+            margin-top: 50px;
+            p {
+                line-height: 28px;
+            }
+        }
+    }
+}
+
+// 待办事项
+.todo-box {
+    position: relative;
+    background: #fff;
+    margin-top: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 20px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    .el-icon-loading {
+        position: relative;
+        left: 5px;
+    }
+    .label {
+        color: #333;
+        height: 44px;
+        line-height: 44px;
+        background-color: #f9f9f9;
+        padding-left: 20px;
+        .icon {
+            display: inline-block;
+            cursor: pointer;
+            vertical-align: middle;
+        }
+    }
+    .el-table {
+        border-left-width: 1px;
+        border-right: 1px solid #dfe6ec;
+    }
+    .el-table .td-emergency {
+        .cell {
+            padding-left: 20px;
+            padding-right: 0;
+        }
+    }
+    .el-table .td-title-task {
+        .cell {
+            padding-left: 10px;
+        }
+    }
+    .item {
+        padding-bottom: 20px;
+        .main-list {
+            padding: 0;
+            overflow: hidden;
+            width: auto;
+            height: auto;
+            .main-list-row {
+                position: absolute;
+                right: 20px;
+                top: 0;
+                padding: 0 0 0 20px;
+                min-height: 42px;
+                line-height: 43px;
+                background-color: #f9f9f9;
+                .pager .next {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+    .tab-box {
+        .empty-todo {
+            width: 100%;
+            height: 220px;
+            padding-top: 150px;
+            color: #666674;
+            text-align: center;
+            background: url('../images/empty_todo@2x.png') no-repeat 50% 40px;
+            background-size: 120px 102px;
+            font-size: 12px;
+        }
+        .hide {
+            display: none;
+        }
+        @lineHeight: 44px;
+        .tab-nav {
+            margin-bottom: 20px;
+            border-bottom: 0;
+            background-color: #f9f9f9;
+            line-height: @lineHeight;
+            border-top: 1px solid #e9e9e9;
+        }
+        .deliver {
+            height: 2px;
+            background: #e6e9f0;
+            position: relative;
+            bottom: 2px;
+            z-index: -1;
+        }
+        .nav {
+            width: 142px;
+            display: inline-block;
+            font-size: 14px;
+            text-align: center;
+            height: 100%;
+            margin-right: 0;
+            color: #666666;
+            a {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                line-height: @lineHeight;
+                border: 1px solid #e9e9e9;
+                border-left: 0;
+                border-top: 0;
+                padding: 0;
+                color: #666;
+            }
+            a:hover {
+                opacity: 0.9;
+            }
+            a.active {
+                color: #666;
+                line-height: @lineHeight;
+                background-color: #fff;
+                border-color: #fff;
+            }
+        }
+        .tab-con {
+            padding: 0 20px;
+            > .item {
+                .hide();
+            }
+            .active {
+                display: block;
+            }
+        }
+        .el-table .el-table__empty-block {
+            min-height: 238px;
+        }
+    }
+}
+
+// 待办事项 end
+// 我创建的
+.mycreated-box {
+    .tab-box {
+        .empty-todo {
+            background: url('../images/empty_mycreated@2x.png') no-repeat 50% 40px;
+            background-size: 120px 102px;
+        }
+    }
+}
+
+// 我创建的 end
+.home-wrap-auto {
+    width: 70%;
+    padding: 20px 0;
+    .main-header {
+        position: relative;
+        border-bottom: 1px solid #f3f3f3;
+    }
+    .main {
+        padding-top: 0;
+        background: #fff;
+    }
+    .bd-color {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-right: 4px;
+        vertical-align: middle;
+    }
+    .crisis-bc {
+        background-color: #f36b5d;
+    }
+    .apply-tools-bc {
+        background-color: #29ab91;
+    }
+    .task-bc {
+        background-color: #f39725;
+    }
+    .require-bc {
+        background-color: #539eff;
+    }
+}
+
+.app-manage-warp {
+    .main {
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 20px;
+    }
+}

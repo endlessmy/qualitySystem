@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <title>首页</title>
+    <link rel="icon" type="image/png" href="./logo-70x70.png" />
+
+    <% for (var css in htmlWebpackPlugin.files.css) { %>
+    <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+    <% } %>
+
+    <script>
+        window.config = {
+            context: 'http://localhost:1619' // local
+            // context: "https://39.156.1.8/cloudapi", // 测试
+            // context: "http://39.156.1.8:28080/cloudapi" // 开发
+            // context: "https://10.124.1.51/cloudapi" // 正式
+            // context: "http://10.148.67.131:28080/cloudapi", // 家里的开发环境
+            // context: "http://10.124.1.52:28080/cloudapi", // 家里的开发环境
+            // context: "http://192.168.141.227:8081/cloudapi"
+        };
+
+    </script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+    <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+    <% } %>
+</body>
+
+</html>

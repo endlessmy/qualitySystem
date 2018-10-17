@@ -1,0 +1,657 @@
+@import '../core/common.less';
+//更新状态的颜色
+.state {
+    height: 22px;
+    line-height: 22px;
+    .default {
+        background-color: #cacaca;
+        color: white;
+    }
+    .text {
+        border-radius: 2px;
+        width: 60px;
+        display: inline-block;
+    }
+    .primary {
+        background-color: #49cffd;
+        color: white;
+        text-align: center;
+    }
+    .warning {
+        background-color: #eed600;
+        color: white;
+        text-align: center;
+    }
+    .danger {
+        background-color: #f1605b;
+        color: white;
+        text-align: center;
+    }
+    .resolve {
+        background-color: #55cc77;
+        color: white;
+        text-align: center;
+    }
+}
+
+// 自研按钮
+.el-btn {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 10px;
+    margin-left: -3px;
+    height: 34px;
+    line-height: 34px;
+    color: #666; // 覆盖a标签上的样色
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    text-align: center;
+    background-color: #f7f7f7;
+    font-size: 12px;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+        background-color: #fff;
+        color: #666;
+    }
+    &.disable,
+    &.disable:hover {
+        color: #c0c4cc; // background-image: none;
+        background-color: #fff;
+        border-color: #ebeef5;
+        user-select: none;
+        cursor: default;
+    }
+    &.out-excel-btn {
+        padding: 0;
+    }
+    [class^='icon-'] {
+        &::before {
+            font-size: 14px;
+        }
+    }
+    &-default-primary,
+    &-default-primary:hover {
+        color: #539eff;
+        border: 1px solid #bbd9ff;
+        background-color: #fff;
+    }
+    &.small {
+        height: 28px;
+        line-height: 28px;
+    }
+}
+
+// 自研按钮 end
+.color-gray {
+    color: #757a86;
+}
+
+// @author qqli
+.icon-shouhui-unexpand {
+    transform: rotateZ(180deg);
+    transition: all 0.2s;
+}
+
+//时间选择去掉选择年份
+.el-icon-d-arrow-right:before,
+.el-icon-d-arrow-left:before {
+    display: none;
+}
+
+.show-year {
+    .el-icon-d-arrow-right:before,
+    .el-icon-d-arrow-left:before {
+        display: block;
+    }
+}
+
+.el-popover.tips-user {
+    z-index: 1999 !important;
+}
+
+.el-cascader {
+    width: 100%;
+}
+
+.placeholder-be-value {
+    input::-webkit-input-placeholder {
+        color: #333 !important;
+    }
+}
+
+.el-message {
+    z-index: 3000 !important;
+}
+
+.clear-placeholder-value {
+    position: absolute;
+    right: 13px;
+    top: 11px;
+    z-index: 999;
+    width: 14px;
+    height: 14px;
+    text-align: center;
+    line-height: 14px;
+    display: inline-block;
+    color: #fff;
+    border-radius: 100%;
+    cursor: pointer;
+    background: #999;
+    opacity: 0;
+    &:hover {
+        // opacity:1;
+    }
+}
+
+.popper-height {
+    .el-cascader-menu {
+        max-height: 500px;
+        overflow: auto;
+    }
+}
+
+.popper-height {
+    .el-cascader-menu {
+        max-height: 500px;
+        overflow: auto;
+    }
+}
+
+.el-cascader-menus {
+    max-height: 280px;
+    overflow: auto;
+}
+
+.el-select-dropdown__item {
+    height: auto;
+    &.selected {
+        .right {
+            padding-right: 20px;
+        }
+    }
+}
+
+.el-select-dropdown.tabProject {
+    width: auto !important;
+}
+
+.el-popover {
+    min-width: 0;
+}
+
+.select2-hidden-accessible {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+}
+
+.dialog-custom.requirement-screening {
+    width: 710px !important;
+    .filter-body {
+        .filter-body-list {
+            margin-bottom: 20px;
+            margin-right: 20px;
+        }
+        .filter-select input {
+            line-height: 14px; //修复业务需求页面点击筛选按钮弹出的筛选条件框中的文字没有居中在输入框的正中间问题
+            height: 34px;
+        }
+        .filter-label {
+            padding-right: 6px;
+            text-align: right;
+            width: 108px;
+            line-height: 34px; //修复业务需求页面点击筛选按钮弹出的筛选条件框中的文字没有居中在输入框的正中间问题
+            height: 34px;
+        }
+        .el-date-editor--daterange.el-input,
+        .el-input {
+            width: 200px;
+        }
+    }
+}
+
+// 若在表格中最后一列，列宽学大于下拉框最小宽度 120
+.header-select-multiple {
+    position: relative;
+    .el-select {
+        position: absolute;
+        bottom: -7px;
+        opacity: 0;
+        left: 0;
+        .el-select__tags {
+            display: none;
+        }
+        .el-input {
+            .el-input__icon {
+                display: none;
+            }
+            .el-input__inner {
+                cursor: pointer; // width: 60px;
+                // margin-left: 30px;
+                overflow: hidden;
+                padding: 0;
+                border: none;
+            }
+        }
+    }
+    &.input-len-3 {
+        .el-input {
+            .el-input__inner {
+                // width: 60px;
+            }
+        }
+    }
+    &.input-len-4 {
+        .el-input {
+            .el-input__inner {
+                // width: 70px;
+            }
+        }
+    }
+    &.input-len-5 {
+        .el-input {
+            .el-input__inner {
+                // width: 80px;
+            }
+        }
+    }
+}
+
+.header-popper-select {
+    margin-top: 2px;
+    margin-left: -10px;
+    min-width: 120px !important;
+    .el-scrollbar__wrap {
+        max-height: 276px;
+    }
+}
+
+// 表头远程搜索用户
+.header-popper-user {
+    margin-left: -10px;
+    background: transparent;
+    box-shadow: none;
+    .el-select {
+        bottom: -7px;
+    }
+    &.el-popover[x-placement^='bottom'] {
+        margin-top: 0;
+    }
+    &.el-popover {
+        padding: 0;
+        border: none;
+        .popper__arrow {
+            display: none;
+        }
+    }
+}
+
+.header-popper-version,
+.header-popper-module {
+    margin-top: 2px;
+    margin-left: -10px;
+}
+
+.header-select-tree {
+    position: relative;
+    .el-cascader {
+        opacity: 0;
+        position: absolute;
+        right: 0px;
+        top: -6px;
+    }
+}
+
+.hot-link-list {
+    background-color: #fff;
+    width: 99px;
+    padding: 2px 0;
+    z-index: 2001 !important;
+    a {
+        display: block;
+        color: #757a86;
+        height: 40px;
+        padding: 0 0 0 22px;
+        line-height: 40px;
+        &:hover {
+            background-color: #e3f1ff;
+        }
+    }
+}
+
+.new-stuff-for-project,
+.newStuffForProject {
+    background-color: #fff;
+    width: 118px;
+    padding: 2px 0;
+    a {
+        display: block;
+        color: #333;
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
+        &:hover {
+            background-color: #e3f1ff;
+            border-left: 1px solid #539eff;
+            span {
+                margin-left: -1px;
+            }
+        }
+    }
+}
+
+.el-dropdown-menu {
+    max-height: 302px;
+    overflow: auto;
+}
+
+.module-title {
+    float: left;
+    height: 50px; // margin-left: 38px;
+    box-sizing: border-box;
+    color: #fff;
+    .fs14;
+    line-height: 50px;
+    font-weight: normal;
+    border-left: 1px solid #424e65;
+    border-right: 1px solid #424e65;
+    padding: 0px 20px;
+}
+
+.schedule-custom {
+    .el-cascader {
+        width: auto;
+    }
+}
+
+.el-popover.popover-help-informatiton {
+    z-index: 2011 !important;
+    padding: 0px !important;
+    width: 200px;
+    background: #ffffff;
+    border: 1px solid #dcdfe5;
+    box-shadow: 0 4px 8px 0 #e8e8e8;
+    margin-top: 5px !important;
+    overflow: hidden; //margin-left: 20px !important;
+    .hovers {
+        background: #ffffff;
+        width: 200px;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+    }
+    .help-information-box {
+        padding: 6px 0px;
+    }
+    .help-content {
+        font-size: 14px;
+        color: #333;
+        padding: 8px 0px 12px 16px;
+        width: 100%;
+        height: 36px;
+        cursor: pointer;
+        display: block;
+        &:hover {
+            width: 100%;
+            color: #333;
+            background: #e3f1ff;
+            vertical-align: middle;
+        }
+        &.active {
+            color: #333;
+        }
+    }
+    .contact-me-box {
+        padding: 6px 0px;
+    }
+    .contact-product-manager {
+        &:hover {
+            background: #e3f1ff;
+        }
+    }
+    .contact-project-manager {
+        &:hover {
+            background: #e3f1ff;
+        }
+    }
+    .contact-support-mail {
+        &:hover {
+            background: #e3f1ff;
+        }
+    }
+    .contact-in-text {
+        font-family: PingFangSC-Regular;
+        font-size: 14px;
+        color: #333;
+        letter-spacing: 0;
+        line-height: 14px;
+        padding: 10px 0px 5px 16px;
+    }
+    .contact-info-text {
+        font-size: 12px;
+        color: #757a86;
+        padding: 3px 0px 7px 16px;
+        width: 100%;
+        line-height: 14px;
+    }
+    .last-one {
+        font-size: 12px;
+        color: #757a86;
+        width: 100%;
+        line-height: 14px;
+        padding-bottom: 8px;
+        padding-left: 16px; //padding: 3px 0px 8px 16px;
+    }
+}
+
+.onlineDoc .el-dialog__wrapper {
+    z-index: 2002 !important;
+}
+
+.first-cut-hover .el-table__body-wrapper tr:first-child:hover > td {
+    background-color: #fff;
+}
+
+/* @dyf 2018/03/21*/
+
+@keyframes exitmove {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.1);
+        left: 30%;
+        top: 30%;
+    }
+    100% {
+        left: 50%;
+        top: 50%;
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+.exit-animate {
+    z-index: 999999;
+    transform-origin: left top;
+    animation: exitmove 1s ease-in forwards;
+}
+
+.custom-tag {
+    padding-left: 10px;
+    .tag {
+        display: inline-block;
+        position: relative;
+        top: 4px;
+        .normal,
+        .hover {
+            display: none;
+        }
+        .normal {
+            display: inline-block;
+        }
+        &:hover {
+            .normal {
+                display: none;
+            }
+            .hover {
+                display: inline-block;
+            }
+        }
+        span {
+            font-size: 10px;
+            color: #fff;
+            float: left;
+            display: inline-block;
+            vertical-align: middle;
+            background-repeat: repeat;
+            background-size: auto 18px;
+            line-height: 18px;
+            height: 18px;
+            padding-left: 3px;
+            background-color: #539eff;
+            background-image: url('../../images/tag-mid.png');
+        }
+        &::before {
+            content: '';
+            width: 12px;
+            height: 18px;
+            float: left;
+            display: inline-block;
+            vertical-align: middle;
+            background-repeat: no-repeat;
+            background-size: 12px;
+            background-image: url('../../images/tag-left.png');
+        }
+        &::after {
+            content: '';
+            width: 6px;
+            height: 18px;
+            float: left;
+            display: inline-block;
+            vertical-align: middle;
+            background-repeat: no-repeat;
+            background-size: 6px 18px; // background-color:#539EFF;
+            // border-top-right-radius:2px;
+            // border-bottom-right-radius:2px;
+            // padding-right: 5px;
+            background-image: url('../../images/tag-right.png');
+        }
+        &:hover {
+        }
+    }
+}
+
+/*
+    缺陷统计
+    @author: dengyingfeng
+    @date: 2018/05/28
+    @desc: 缺陷模块和项目管理-项目统计-缺陷统计
+*/
+
+.defect-statistic {
+    .param-query {
+        height: 197px;
+        background-color: #fff;
+    }
+    .anchor-color {
+        color: #539eff;
+    }
+    .main {
+        .main-wrap {
+            &.bg-e9edf1 {
+                background-color: #e9edf1;
+            }
+            .draw-content {
+                background-color: white;
+                min-height: 390px;
+            }
+        }
+        .main-wrap .wrap-header-title {
+            margin-bottom: 24px;
+            position: relative;
+            .count-tools {
+                position: absolute;
+                right: 20px;
+                height: 100%;
+                top: 0px;
+            }
+        }
+        .el-cascader .el-cascader__label {
+            height: 34px;
+        }
+        .pro-input,
+        .module-cascader,
+        .version-cascader,
+        .date-picker {
+            width: 270px;
+            height: 34px;
+        }
+        .form {
+            .el-button {
+                width: 60px;
+                height: 28px;
+                line-height: 28px;
+                margin-top: 5px;
+            }
+        }
+        .chart-box {
+            width: 100%;
+            padding: 20px;
+            position: relative;
+            margin-bottom: 31px;
+            .title {
+                border-left: 3px solid #539eff;
+                padding-left: 8px;
+                margin-bottom: 20px;
+                height: 14px;
+                line-height: 14px;
+            }
+        }
+    }
+}
+.icon-set { // modify by lzh 2018/09/25
+    cursor: pointer;
+}
+/*
+    @modify: lzh
+    @date: 2018/09/25
+    @desc: 公共组件projectDetailPopover样式，缺陷、业务需求、项目管理公用
+*/
+.popover-projectlist {
+    max-height: 236px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: 6px !important;
+    padding: 0;
+}
+.project-detail-card {
+    margin-left: 30px !important;
+    padding: 0;
+    .detail-box {
+        width: 260px;
+        min-height: 120px;
+        max-height: 200px;
+        padding: 10px;
+        overflow-y: auto;
+    }
+    .detail-info {
+        display: flex;
+        margin-bottom: 9px;
+        .project-detail {
+            width: 160px;
+            word-wrap: break-word;
+        }
+        > span {
+            width: 70px;
+            color: #666666;
+        }
+    }
+    .detail-info:nth-child(3) {
+        margin-bottom: 0;
+    }
+}

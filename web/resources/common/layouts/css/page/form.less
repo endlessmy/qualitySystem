@@ -1,0 +1,38 @@
+// qqli
+// 2018-05-08 拆分
+// form表单（所有模块）
+@import '../core/common.less';
+.create-form {
+    background-color: #fff;
+    padding: 20px;
+    .submit-btn {
+        .el-button {
+            font-size: 14px;
+        }
+    }
+    .el-form-item.submit-btn {
+        margin-bottom: 0;
+    }
+
+    .el-icon-date {
+        color: @primary-color;
+    }
+    .part-btn {
+        .fs14;
+        color: #747474;
+        cursor: pointer;
+        .upload-border {
+            padding: 7px;
+            border: 1px solid #cacaca;
+            border-radius: 2px;
+            &:hover {
+                border-color: #539eff;
+                color: #539eff;
+            }
+            [class*='icon-'],
+            [class*=' icon-'] {
+                margin-right: 5px;
+            }
+        }
+    }
+}
